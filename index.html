@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootswatch: Cyborg</title>
+    <title>tracking.js</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Eduardo Lundgren">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -14,16 +14,12 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../css/docs.css" rel="stylesheet">
 
   </head>
 
   <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="50">
-    <script src="../js/bsa.js"></script>
-
 
   <!-- Navbar
     ================================================== -->
@@ -35,10 +31,28 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
        </a>
-       <a class="brand" href="../">Bootswatch</a>
+       <a class="brand" href="/">tracking.js</a>
        <div class="nav-collapse" id="main-menu">
-
-       </div>
+        <ul class="nav" id="main-menu-left">
+          <li><a id="swatch-link" href="#examples">Docs</a></li>
+          <li><a id="swatch-link" href="#examples">Guides</a></li>
+          <li><a id="swatch-link" href="#examples">Examples</a></li>
+          <!-- <li><a id="swatch-link" href="#examples">About</a></li> -->
+          <li class="dropdown" id="preview-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lorem <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a target="_blank" href="#">Example #1</a></li>
+              <li><a target="_blank" href="#">Example #2</a></li>
+              <li class="divider"></li>
+              <li><a target="_blank" href="#">Example #3</a></li>
+              <li><a target="_blank" href="#">Example #4</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav pull-right" id="main-menu-right">
+          <li><a rel="tooltip" href="https://github.com/eduardolundgren/tracking.js/zipball/master">Download</a></li>
+          <li><a rel="tooltip" target="_blank" href="https://github.com/eduardolundgren/tracking.js">View on Github <i class="icon-share-alt"></i></a></li>
+        </ul></div>
      </div>
    </div>
  </div>
@@ -51,17 +65,17 @@
 <header class="jumbotron subhead" id="overview">
   <div class="row">
     <div class="span6">
-      <h1>Cyborg</h1>
+      <h1>tracking.js</h1>
       <p class="lead">A preview of changes in this swatch.</p>
     </div>
-    <div class="span6">
+    <!-- <div class="span6">
       <div class="bsa well">
           <div id="bsap_1277971" class="bsarocks bsap_c466df00a3cd5ee8568b5c4983b6bb19"></div>
           <div class="clearfix"><a href="http://adpacks.com" id="bsap_aplink">via Ad Packs</a></div>
       </div>
-    </div>
+    </div> -->
   </div>
-  <div class="subnav">
+  <!-- <div class="subnav">
     <ul class="nav nav-pills">
       <li><a href="#typography">Typography</a></li>
       <li><a href="#navbar">Navbar</a></li>
@@ -69,7 +83,7 @@
       <li><a href="#forms">Forms</a></li>
       <li><a href="#miscellaneous">Miscellaneous</a></li>
     </ul>
-  </div>
+  </div> -->
 </header>
 
 
@@ -79,41 +93,20 @@
 ================================================== -->
 <section id="typography">
   <div class="page-header">
-    <h1>Typography</h1>
+    <h1>Examples</h1>
   </div>
 
   <!-- Headings & Paragraph Copy -->
   <div class="row">
 
     <div class="span4">
-      <div class="well">
-        <h1>h1. Heading 1</h1>
-        <h2>h2. Heading 2</h2>
-        <h3>h3. Heading 3</h3>
-        <h4>h4. Heading 4</h4>
-        <h5>h5. Heading 5</h5>
-        <h6>h6. Heading 6</h6>
-      </div>
-    </div>
-
-    <div class="span4">
-      <h3>Example body text</h3>
+      <h3>Video Camera Snapshot</h3>
       <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
       <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
     </div>
 
-    <div class="span4">
-      <h3>Example addresses</h3>
-      <address>
-        <strong>Twitter, Inc.</strong><br>
-        795 Folsom Ave, Suite 600<br>
-        San Francisco, CA 94107<br>
-        <abbr title="Phone">P:</abbr> (123) 456-7890
-      </address>
-      <address>
-        <strong>Full Name</strong><br>
-        <a href="mailto:#">first.last@gmail.com</a>
-      </address>
+    <div class="span8">
+      <script src="https://gist.github.com/3485292.js?file=gistfile1.js"></script>
     </div>
 
   </div>
@@ -123,7 +116,7 @@
 
 <!-- Navbar
 ================================================== -->
-<section id="navbar">
+<!-- <section id="navbar">
   <div class="page-header">
     <h1>Navbars</h1>
   </div>
@@ -170,10 +163,10 @@
               </ul>
             </li>
           </ul>
-        </div><!-- /.nav-collapse -->
+        </div>
       </div>
-    </div><!-- /navbar-inner -->
-  </div><!-- /navbar -->
+    </div>
+  </div>
 
   <div class="navbar navbar-inverse">
     <div class="navbar-inner">
@@ -218,18 +211,18 @@
               </ul>
             </li>
           </ul>
-        </div><!-- /.nav-collapse -->
+        </div>
       </div>
-    </div><!-- /navbar-inner -->
-  </div><!-- /navbar -->
+    </div><
+  </div>
 
-</section>
+</section> -->
 
 
 
 <!-- Buttons
 ================================================== -->
-<section id="buttons">
+<!-- <section id="buttons">
   <div class="page-header">
     <h1>Buttons</h1>
   </div>
@@ -262,7 +255,7 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
       <tr>
@@ -282,7 +275,7 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
       <tr>
@@ -302,7 +295,7 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
       <tr>
@@ -322,7 +315,7 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
       <tr>
@@ -342,7 +335,7 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
       <tr>
@@ -362,7 +355,7 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
       <tr>
@@ -382,18 +375,18 @@
               <li class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
     </td>
       </tr>
     </tbody>
   </table>
 
-</section>
+</section> -->
 
 
 <!-- Forms
 ================================================== -->
-<section id="forms">
+<!-- <section id="forms">
   <div class="page-header">
     <h1>Forms</h1>
   </div>
@@ -538,12 +531,12 @@
     </div>
   </div>
 
-</section>
+</section> -->
 
 
 <!-- Miscellaneous
 ================================================== -->
-<section id="miscellaneous">
+<!-- <section id="miscellaneous">
   <div class="page-header">
     <h1>Miscellaneous</h1>
   </div>
@@ -596,14 +589,14 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
 <!-- Labels
 ================================================== -->
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="span12">
 
       <h3 id="labels">Labels</h3>
@@ -617,13 +610,13 @@
 
   </div>
   </div>
-  <br />
+  <br /> -->
 
 <!-- Progress bars
 ================================================== -->
 
 
-  <h3 id="progressbars">Progress bars</h3>
+  <!-- <h3 id="progressbars">Progress bars</h3>
 
   <div class="row">
     <div class="span4">
@@ -642,14 +635,14 @@
       </div>
     </div>
   </div>
-  <br />
+  <br /> -->
 
 
 <!-- Alerts & Messages
 ================================================== -->
 
 
-  <h3 id="alerts">Alerts</h3>
+  <!-- <h3 id="alerts">Alerts</h3>
 
   <div class="row">
     <div class="span12">
@@ -682,15 +675,15 @@
   </div>
 
 
-</section>
+</section> -->
 
-<br><br><br><br>
+<!-- <br><br><br><br> -->
 
      <!-- Footer
       ================================================== -->
-      <footer class="footer">
+      <!-- <footer class="footer">
         <p class="pull-right"><a href="#">Back to top</a></p>
-      </footer>
+      </footer> -->
 
     </div><!-- /container -->
 
