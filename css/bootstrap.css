@@ -189,7 +189,8 @@ a:hover {
 .container,
 .navbar-static-top .container,
 .navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+.navbar-fixed-bottom .container,
+.footer-inner {
   width: 940px;
 }
 .span12 {
@@ -443,7 +444,8 @@ a:hover {
 .row-fluid [class*="span"].pull-right {
   float: right;
 }
-.container {
+.container,
+.footer-inner {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
@@ -2495,8 +2497,8 @@ button.close {
   box-shadow: none;
 }
 .btn-large {
-  padding: 9px 14px;
-  font-size: 16px;
+  padding: 15px 20px;
+  font-size: 30px;
   line-height: normal;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -3387,7 +3389,8 @@ input[type="submit"].btn.btn-mini {
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
 }
-.navbar .container {
+.navbar .container,
+.footer-inner {
   width: auto;
 }
 .nav-collapse.collapse {
@@ -3518,7 +3521,8 @@ input[type="submit"].btn.btn-mini {
 }
 .navbar-static-top .container,
 .navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+.navbar-fixed-bottom .container,
+.footer-inner {
   width: 940px;
 }
 .navbar-fixed-top {
@@ -5496,4 +5500,29 @@ select:focus {
   margin: 0 auto;
   display: block;
   border: 2px solid #9F3FCF;
+}
+.call2action {
+  width: 504px;
+  margin: 0 auto;
+}
+.call2action a {
+  margin-top: 20px;
+}
+.call2action a:nth-child(2) {
+  margin-left: 10px;
+}
+footer {
+  width: 100%;
+  margin-top: 20px;
+  border-top: 2px solid #9F3FCF;
+  padding: 10px 0 5px;
+}
+footer p {
+  display: inline-block;
+}
+footer p:nth-child(2) {
+  float: right;
+}
+footer a {
+  color: #fff;
 }
