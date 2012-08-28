@@ -901,6 +901,27 @@
   .carousel-caption {
     position: static;
   }
+  .featuring {
+    display: none;
+  }
+  .btn-large {
+    padding: 11px 15px;
+    font-size: 21px;
+    line-height: 21px;
+  }
+  .call2action {
+    width: 100%;
+  }
+  .subhead {
+    margin-top: 15px;
+  }
+  footer p:nth-child(2) {
+    float: right;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
 }
 
 @media (max-width: 979px) {
