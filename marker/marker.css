@@ -1,22 +1,29 @@
 body, html {
-	margin: 0px;
-	padding: 0px;
 	background: #000;
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .canvas {
-	margin:-130px auto 0 auto;
-	top:50%;
-	position: relative;
-	display: block;
-	vertical-align: middle;
-	width: 260px;
-	height: 260px;
 	border-radius: 100%;
-	opacity: .4
+	display: block;
+	height: 260px;
+	margin: -130px auto 0 auto;
+	opacity: .4;
+	position: relative;
+	top: 50%;
+	width: 260px;
 }
 
-.canvas.blue {background: rgb(0, 0, 255)}
-.canvas.cyan {background: rgb(0, 255, 255)}
-.canvas.magenta {background: rgb(255, 0, 255)}
+.blue {
+	background: rgb(0, 0, 255);
+}
+
+.cyan {
+	background: rgb(0, 255, 255);
+}
+
+.magenta {
+	background: rgb(255, 0, 255);
+}
