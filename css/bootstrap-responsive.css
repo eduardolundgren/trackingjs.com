@@ -865,6 +865,10 @@
   .nav-collapse {
     -webkit-transform: translate3d(0, 0, 0);
   }
+  .lead {
+    font-size: 16px;
+    line-height: 20px;
+  }
   .page-header h1 small {
     display: block;
     line-height: 20px;
@@ -900,6 +904,27 @@
   }
   .carousel-caption {
     position: static;
+  }
+  .featuring {
+    display: none;
+  }
+  .btn-large {
+    padding: 11px 15px;
+    font-size: 21px;
+    line-height: 21px;
+  }
+  .call2action {
+    width: 100%;
+  }
+  .subhead {
+    margin-top: 15px;
+  }
+  footer p:nth-child(2) {
+    float: right;
+  }
+  h1 {
+    font-size: 48px;
+    line-height: 48px;
   }
 }
 
