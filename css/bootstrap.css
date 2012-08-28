@@ -5526,3 +5526,6 @@ footer p:nth-child(2) {
 footer a {
   color: #fff;
 }
+#about {
+  margin-top: 50px;
+}
