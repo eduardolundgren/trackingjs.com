@@ -1,3 +1,6 @@
+var sliderBox = document.getElementById('sliderBox');
+var slider = document.getElementById('slider');
+
 function hideAddressBar() {
 	if(!window.location.hash) {
 		if(document.height <= window.outerHeight + 10) {
@@ -9,5 +12,23 @@ function hideAddressBar() {
 	}
 }
 
+function changeOpacity(opacity) {
+	document.getElementById("canvas").style.opacity = (opacity)/100;
+}
+
+
+function toggleSlider (e) {
+	var display = sliderBox.style.display;
+	if (display == 'block') {
+		sliderBox.style.display = 'none';
+	} else {
+		sliderBox.style.display = 'block';
+	}
+}
+
+slider.addEventListener("touchend", function (e) {
+	e.stopPropagation();
+});
+window.addEventListener("touchend", toggleSlider);
 window.addEventListener("load", hideAddressBar );
 window.addEventListener("orientationchange", hideAddressBar );
