@@ -26,9 +26,13 @@ function toggleSlider (e) {
 	}
 }
 
-slider.addEventListener("touchend", function (e) {
+function stopPropagation (e) {
 	e.stopPropagation();
-});
+}
+
+slider.addEventListener("touchend", stopPropagation);
+slider.addEventListener("click", toggleSlider);
 window.addEventListener("touchend", toggleSlider);
+window.addEventListener("click", toggleSlider);
 window.addEventListener("load", hideAddressBar );
 window.addEventListener("orientationchange", hideAddressBar );
