@@ -5497,10 +5497,30 @@ select:focus {
   margin: 80px 0 0 0;
 }
 .featuring {
+  width: 500px;
+  height: 313px;
   margin: 0 auto;
   display: block;
   border: 2px solid #9F3FCF;
+  position: relative;
 }
+
+.featuring p {
+  text-align: center;
+  font-size: 48px;
+  line-height: 1em;
+  color: #9F3FCF;
+  margin-top: 100px;
+}
+
+.featuring .video-container,
+.featuring .try-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
 .call2action {
   width: 504px;
   margin: 0 auto;
