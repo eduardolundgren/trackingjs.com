@@ -1,0 +1,3 @@
+[submodule "lib/trackingjs"]
+	path = lib/trackingjs
+	url = git@github.com:eduardolundgren/tracking.js.git
