@@ -2,6 +2,15 @@
 layout: default
 ---
 
+<header class="jumbotron subhead" id="overview">
+  <div class="row">
+    <div class="span12">
+      <h1>tracking.js</h1>
+      <p class="lead">Change the way you interact with your browser</p>
+    </div>
+  </div>
+</header>
+
 <section id="about">
 
   <div class="page-header">

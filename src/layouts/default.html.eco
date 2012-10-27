@@ -23,7 +23,6 @@
   <%- @partial('nav.html.eco', @) %>
 
   <div class="container">
-    <%- @partial('header.html.eco', @) %>
     <%- @content %>
   </div>
 
