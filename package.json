@@ -1,0 +1,21 @@
+{
+  "name": "trackingjs.com",
+  "version": "0.1.0",
+  "description": "Change the way you interact with your browser",
+  "homepage": "http://trackingjs.com",
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/eduardolundgren/tracking.js.git"
+  },
+  "engines" : {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "dependencies": {
+    "docpad-plugin-eco": "2.x",
+    "docpad-plugin-marked": "2.x",
+    "docpad-plugin-related": "2.x",
+    "docpad-plugin-highlightjs": "2.x",
+    "docpad-plugin-partials": "2.x"
+  }
+}
