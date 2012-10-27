@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<header class="jumbotron subhead" id="overview">
+  <div class="row">
+    <div class="span12">
+      <h1>tracking.js</h1>
+      <p class="lead">Change the way you interact with your browser</p>
+      <iframe class="featuring" src="http://player.vimeo.com/video/48443629?title=0&amp;byline=0&amp;portrait=0&amp;color=9F3FCF" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <div class="call2action">
+        <a class="btn btn-inverse btn-large" href="https://github.com/downloads/eduardolundgren/tracking.js/tracking.js-1.0.0-alpha.zip">Download now</a>
+        <a class="btn btn-info btn-large" href="https://github.com/eduardolundgren/tracking.js">Fork on Github</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="examples">
+
+  <div class="page-header">
+    <h2>Example</h2>
+  </div>
+
+  <div class="row">
+
+    <div class="span4">
+      <h3>Basic Usage</h3>
+      <p>This example is a simple way to initialize the user browser camera and start tracking for objects with color <span style="color: magenta;">magenta</span>.</p>
+      <p>There are two available callbacks, <code>onFound</code> is fired when the object is detected and <code>onNotFound</code> does the opposite.</p>
+      <p>The <code>onFound</code> callback receives as argument a track payload containing the x, y and estimated z coordinates.</p>
+    </div>
+
+    <div class="span8">
+      <script src="https://gist.github.com/3508250.js?file=basic_usage.js"></script>
+    </div>
+
+  </div>
+
+</section>

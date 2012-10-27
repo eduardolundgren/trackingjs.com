@@ -1,0 +1,6 @@
+<footer>
+  <div class="footer-inner">
+    <p>Developed by <a href="http://eduardolundgren.com/">Eduardo Lundgren</a></p>
+    <p>Under <a href="https://github.com/eduardolundgren/tracking.js/blob/master/LICENSE.md">BSD license</a></p>
+  </div>
+</footer>

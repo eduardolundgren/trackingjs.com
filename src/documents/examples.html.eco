@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<header class="jumbotron subhead" id="overview">
+  <div class="row">
+    <div class="span12">
+      <h1>tracking.js</h1>
+      <p class="lead">Change the way you interact with your browser</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="row">
+    <div class="span6">
+      <div class="page-header">
+        <h2>Using a PS Move single controller</h2>
+      </div>
+
+      <iframe class="featuring" src="http://player.vimeo.com/video/48443682?title=0&amp;byline=0&amp;portrait=0&amp;color=9F3FCF" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      <br/>
+
+      <p>This example shows a color tracking of a single PS Move controller using <span style="color: magenta;">magenta</span> color.</p>
+    </div>
+
+    <div class="span6">
+      <div class="page-header">
+        <h2>Using a PS Move multiple controllers</h2>
+      </div>
+
+      <iframe class="featuring" src="http://player.vimeo.com/video/48429579?title=0&amp;byline=0&amp;portrait=0&amp;color=9F3FCF" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      <br/>
+
+      <p>This example shows a color tracking of multiple PS Move controllers using <span style="color: magenta;">magenta</span> and <span style="color: cyan;">cyan</span> colors.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span6">
+      <div class="page-header">
+        <h2>Draw Something</h2>
+      </div>
+
+      <iframe class="featuring" src="http://player.vimeo.com/video/48429580?title=0&amp;byline=0&amp;portrait=0&amp;color=9F3FCF" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      <br/>
+
+      <p>This example parodies the famous Draw Something game using a PSMove controller to draw. It was done with few lines of code only.</p>
+    </div>
+
+    <div class="span6">
+      <div class="page-header">
+        <h2>Minecraft game (tracking.js + three.js)</h2>
+      </div>
+
+      <iframe class="featuring" src="http://player.vimeo.com/video/48428772?title=0&amp;byline=0&amp;portrait=0&amp;color=9F3FCF" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      <br/>
+
+      <p>This example shows tracking.js being used to develop interactive games using <a href="https://github.com/mrdoob/three.js/" target="_blank">three.js</a> to render the 3D scene. Using mutiple controllers, <span style="color: magenta;">magenta</span> moves the first person player to the left and to the right, <span style="color: cyan;">cyan</span> moves forward.</p>
+    </div>
+  </div>
+</section>

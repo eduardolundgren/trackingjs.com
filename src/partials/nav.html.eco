@@ -1,0 +1,22 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">tracking.js</a>
+      <div class="nav-collapse" id="main-menu">
+        <ul class="nav" id="main-menu-left">
+          <li><a id="swatch-link" href="about.html">About</a></li>
+          <li><a id="swatch-link" href="examples.html">Examples</a></li>
+        </ul>
+        <ul class="nav pull-right" id="main-menu-right">
+          <li><a rel="tooltip" href="https://github.com/downloads/eduardolundgren/tracking.js/tracking.js-1.0.0-alpha.zip">Download now</a></li>
+          <li><a rel="tooltip" target="_blank" href="https://github.com/eduardolundgren/tracking.js">Fork on Github <i class="icon-share-alt"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
