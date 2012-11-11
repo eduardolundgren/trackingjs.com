@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<header class="jumbotron subhead" id="overview">
+  <div class="row">
+    <div class="span12">
+      <h1>tracking.js</h1>
+      <p class="lead">Change the way you interact with your browser</p>
+      <div class="featuring">
+        <p><%= @document.title %></p>
+        <p id="example-description"><%= @document.description %></p>
+        <div class="try-container"></div>
+        <div class="video-container">
+          <iframe src="http://player.vimeo.com/video/<%= @document.vimeoID %>?title=0&amp;byline=0&amp;portrait=0&amp;color=9F3FCF" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+      </div>
+      <div class="call2action">
+        <a id="try" class="btn btn-inverse btn-large" style="width: 210px;" href="#">Try it now!</a>
+        <a id="video" class="btn btn-info btn-large" href="#">See the video!</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="examples">
+
+  <div class="page-header">
+    <h2><%= @document.title %></h2>
+  </div>
+
+  <div class="row">
+
+    <div class="span4">
+      <h3>Usage</h3>
+      <p><%= @document.description %></p>
+    </div>
+
+    <div class="span8">
+      <script src="<%= @document.gistURL %>"></script>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Le tracking.js -->
+<script src="/js/tracking.js/src/tracking.js"></script>
+<script src="/js/tracking.js/src/tracker/color/color.js"></script>
+
+<%- @content %>
