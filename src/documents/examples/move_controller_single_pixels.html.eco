@@ -1,0 +1,61 @@
+---
+title: 'Single Controller'
+description: 'This example shows a color tracking using magenta.'
+gistURL: 'https://gist.github.com/3909630.js?file=gistfile1.js'
+vimeoID: 48443682
+layout: example
+---
+
+<script>
+
+  $(document).ready(function() {
+
+    var activeExample = false;
+
+    function runExample() {
+
+      activeExample = true;
+
+      var videoCamera = new tracking.VideoCamera().hide().render().renderVideoCanvas(".try-container");
+
+      var t1 = videoCamera.track({
+        type: 'color',
+        color: 'magenta',
+        onFound: function(track) {
+
+            $('.try-container canvas').css('width', '500px');
+
+            var pixels = track.pixels;
+
+            for (var i = 0, len = pixels.length; i < len; i += 2) {
+                videoCamera.canvas.context.fillStyle = "rgb(255,0,255)";
+                videoCamera.canvas.context.fillRect(pixels[i], pixels[i+1], 2, 2);
+            }
+
+            videoCamera.canvas.context.fillStyle = "rgb(0,0,0)";
+            videoCamera.canvas.context.fillRect(track.x, track.y, 5, 5);
+        },
+        onNotFound: function() {}
+      });
+
+    }
+
+    $('#try').click(function(e) {
+
+      if (!activeExample)
+        runExample();
+
+      $('.video-container').fadeOut();
+      $('.try-container').fadeIn();
+      e.preventDefault();
+
+    });
+
+    $('#video').click(function(e) {
+      $('.try-container').fadeOut();
+      $('.video-container').fadeIn();
+      e.preventDefault();
+    });
+
+  });
+</script>
