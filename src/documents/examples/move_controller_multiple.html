@@ -1,0 +1,70 @@
+---
+title: 'Multiple Controllers'
+description: 'This example shows a color tracking using magenta and cyan.'
+gistURL: 'https://gist.github.com/4055187.js?file=gistfile1.js'
+vimeoID: 48429579
+layout: example
+---
+
+<script>
+
+  $(document).ready(function() {
+
+    var activeExample = false;
+
+    function runExample() {
+
+      activeExample = true;
+
+      var videoCamera = new tracking.VideoCamera().hide().render().renderVideoCanvas(".try-container"),
+          ctx = videoCamera.canvas.context;
+
+      var t1 = videoCamera.track({
+          type: 'color',
+          color: 'magenta',
+          onFound: function(track) {
+
+              $('.try-container canvas').css('width', '500px');
+
+              var size = 60 - track.z;
+              ctx.strokeStyle = "rgb(255,0,255)";
+              ctx.lineWidth = 3;
+              ctx.strokeRect(track.x - size*0.5, track.y - size*0.5, size, size);
+          }
+      });
+
+      var t2 = videoCamera.track({
+          type: 'color',
+          color: 'cyan',
+          onFound: function(track) {
+
+              $('.try-container canvas').css('width', '500px');
+
+              var size = 60 - track.z;
+              ctx.strokeStyle = "rgb(0,255,255)";
+              ctx.lineWidth = 3;
+              ctx.strokeRect(track.x - size*0.5, track.y - size*0.5, size, size);
+          }
+      });
+
+    }
+
+    $('#try').click(function(e) {
+
+      if (!activeExample)
+        runExample();
+
+      $('.video-container').fadeOut();
+      $('.try-container').fadeIn();
+      e.preventDefault();
+
+    });
+
+    $('#video').click(function(e) {
+      $('.try-container').fadeOut();
+      $('.video-container').fadeIn();
+      e.preventDefault();
+    });
+
+  });
+</script>
