@@ -1,0 +1,3 @@
+[submodule "src/files/js/tracking.js"]
+	path = src/files/js/tracking.js
+	url = git@github.com:eduardolundgren/tracking.js.git
