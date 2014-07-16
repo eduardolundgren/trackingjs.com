@@ -12,9 +12,43 @@ body {
   font-family: 'Raleway', Arial, sans-serif;
 }
 
-.container {
+.wrapper {
   max-width: 1920px;
   margin: 0 auto;
+}
+
+/* Top nav
+   ========================================================================== */
+
+.top-nav {
+  background: #121314;
+  height: 50px;
+}
+
+.top-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.top-nav ul li {
+  display: inline-block;
+  padding: 0 1em;
+  line-height: 3em;
+}
+
+.top-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .1s linear;
+  border-bottom: 2px solid #121314;
+}
+
+.top-nav ul li a.active,
+.top-nav ul li a:hover {
+  border-bottom: 2px solid #9729d6;
 }
 
 /* Header
@@ -44,6 +78,6 @@ body {
 
 @media screen and (max-width: 25em) {
   .header {
-    font-size: 75%;
+    font-size: 85%;
   }
 }
