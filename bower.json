@@ -10,5 +10,8 @@
     "**/.*",
     "bower_components",
     "node_modules"
-  ]
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.1"
+  }
 }
