@@ -17,6 +17,19 @@ body {
   padding-left: 0;
 }
 
+#layout.active {
+  position: relative;
+  left: 150px;
+}
+#layout.active #menu {
+  left: 150px;
+  width: 150px;
+}
+
+#layout.active .menu-link {
+  left: 150px;
+}
+
 .content {
   line-height: 1.6em;
   max-width: 800px;
@@ -190,5 +203,9 @@ body {
     position: fixed;
     left: 150px;
     display: none;
+  }
+
+  #layout.active .menu-link {
+    left: 150px;
   }
 }
