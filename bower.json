@@ -12,6 +12,6 @@
     "node_modules"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.1"
+    "pure": "~0.5.0"
   }
 }
