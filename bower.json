@@ -12,6 +12,7 @@
     "node_modules"
   ],
   "dependencies": {
-    "pure": "~0.5.0"
+    "pure": "~0.5.0",
+    "tracking.js": "eduardolundgren/tracking.js#master"
   }
 }
