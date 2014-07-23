@@ -27,6 +27,8 @@
   menuLink.onclick = function(e) {
     var active = 'active';
 
+    console.log(menuLink);
+
     toggleClass(layout, active);
     toggleClass(menu, active);
     toggleClass(menuLink, active);
