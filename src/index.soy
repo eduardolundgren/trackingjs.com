@@ -10,61 +10,65 @@
   {param content}
     <link rel="stylesheet" href="styles/home-grid.css">
 
-    <div class="header">
-      <h1>tracking.js</h1>
-      <h2>Lorem ipsum dolor sit amet.</h2>
-    </div>
+    {call menu.side}{/call}
 
-    <div class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae!</p>
-      <pre class="code" style="text-align: center; width: 245px; margin: 50px auto 20px; display: block;"><code>bower install tracking.js</code></pre>
-      <p class="gh-btns">
-        <iframe src="http://ghbtns.com/github-btn.html?user=eduardolundgren&amp;repo=tracking.js&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="135" height="30"></iframe>
-        <iframe src="http://ghbtns.com/github-btn.html?user=eduardolundgren&amp;repo=tracking.js&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="135" height="30"></iframe>
-      </p>
-    </div>
+    <div id="main">
+      <div class="header">
+        <h1>tracking.js</h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+      </div>
 
-    <div class="content">
-      {call .examples}
-        {param items: [
-          [
-            'name': 'Lorem Ipsum',
-            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'image': 'images/sample/1.jpg',
-            'url': '#1'
-          ],
-          [
-            'name': 'Lorem Ipsum',
-            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'image': 'images/sample/2.jpg',
-            'url': '#2'
-          ],
-          [
-            'name': 'Lorem Ipsum',
-            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'image': 'images/sample/3.jpg',
-            'url': '#3'
-          ],
-          [
-            'name': 'Lorem Ipsum',
-            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'image': 'images/sample/4.jpg',
-            'url': '#4'
-          ],
-          [
-            'name': 'Lorem Ipsum',
-            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'image': 'images/sample/5.jpg',
-            'url': '#5'
-          ],
-          [
-            'name': 'Lorem Ipsum',
-            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-            'image': 'images/sample/6.jpg',
-            'url': '#6'
-          ]
-        ] /}
-      {/call}
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae!</p>
+        <pre class="code" style="text-align: center; width: 245px; margin: 50px auto 20px; display: block;"><code>bower install tracking.js</code></pre>
+        <p class="gh-btns">
+          <iframe src="http://ghbtns.com/github-btn.html?user=eduardolundgren&amp;repo=tracking.js&amp;type=watch&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="135" height="30"></iframe>
+          <iframe src="http://ghbtns.com/github-btn.html?user=eduardolundgren&amp;repo=tracking.js&amp;type=fork&amp;count=true&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="135" height="30"></iframe>
+        </p>
+      </div>
+
+      <div class="content">
+        {call .examples}
+          {param items: [
+            [
+              'name': 'Lorem Ipsum',
+              'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+              'image': 'images/sample/1.jpg',
+              'url': '#1'
+            ],
+            [
+              'name': 'Lorem Ipsum',
+              'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+              'image': 'images/sample/2.jpg',
+              'url': '#2'
+            ],
+            [
+              'name': 'Lorem Ipsum',
+              'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+              'image': 'images/sample/3.jpg',
+              'url': '#3'
+            ],
+            [
+              'name': 'Lorem Ipsum',
+              'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+              'image': 'images/sample/4.jpg',
+              'url': '#4'
+            ],
+            [
+              'name': 'Lorem Ipsum',
+              'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+              'image': 'images/sample/5.jpg',
+              'url': '#5'
+            ],
+            [
+              'name': 'Lorem Ipsum',
+              'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+              'image': 'images/sample/6.jpg',
+              'url': '#6'
+            ]
+          ] /}
+        {/call}
+      </div>
     </div>
   {/param}
 {/call}
