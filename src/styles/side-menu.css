@@ -19,15 +19,15 @@ body {
 
 #layout.active {
   position: relative;
-  left: 150px;
+  left: 170px;
 }
 #layout.active #menu {
-  left: 150px;
-  width: 150px;
+  left: 170px;
+  width: 170px;
 }
 
 #layout.active .menu-link {
-  left: 150px;
+  left: 170px;
 }
 
 .content {
@@ -66,8 +66,8 @@ body {
   bottom: 0;
   left: 0;
   overflow-y: auto;
-  width: 150px;
-  margin-left: -150px;
+  width: 170px;
+  margin-left: -170px;
   background: #222326;
   -webkit-overflow-scrolling: touch;
 }
@@ -102,19 +102,8 @@ body {
   background: #2e2f33;
 }
 
-#menu .pure-menu-selected,
-#menu .pure-menu-heading {
-  background: #1f8dd6;
-}
-
 #menu .pure-menu-selected a {
   color: #fff;
-}
-
-#menu .pure-menu-heading:hover,
-#menu .pure-menu-heading:focus,
-#menu .home-selected {
-  background: #9f3fcf;
 }
 
 #menu .pure-menu li.pure-menu-selected a {
@@ -183,6 +172,12 @@ body {
   margin-top: .6em;
 }
 
+#menu .pure-menu-heading:hover,
+#menu .pure-menu-heading:focus,
+#menu .pure-menu-heading.home-menu-selected {
+  background: #9f3fcf;
+}
+
 @media (min-width: 48em) {
   .header,
     .content {
@@ -192,20 +187,21 @@ body {
 
   #layout {
     left: 0;
-    padding-left: 150px;
+    padding-left: 170px;
   }
 
   #menu {
-    left: 150px;
+    left: 170px;
   }
 
   .menu-link {
     position: fixed;
-    left: 150px;
+    left: 170px;
     display: none;
   }
 
   #layout.active .menu-link {
-    left: 150px;
+    left: 170px;
   }
 }
+
