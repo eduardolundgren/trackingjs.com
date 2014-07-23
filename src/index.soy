@@ -25,61 +25,65 @@
     </div>
 
     <div class="content">
-      <div class="grid">
-        <figure class="effect">
-          <img src="images/sample/1.jpg" alt="">
-          <figcaption>
-            <h2>Lorem <span>Ipsum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="effect">
-          <img src="images/sample/2.jpg" alt="">
-          <figcaption>
-            <h2>Lorem <span>Ipsum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="#">View more</a>
-          </figcaption>
-        </figure>
-
-        <figure class="effect">
-          <img src="images/sample/3.jpg" alt="">
-          <figcaption>
-            <h2>Lorem <span>Ipsum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="#">View more</a>
-          </figcaption>
-        </figure>
-
-        <figure class="effect">
-          <img src="images/sample/4.jpg" alt="">
-          <figcaption>
-            <h2>Lorem <span>Ipsum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="#">View more</a>
-          </figcaption>
-        </figure>
-
-        <figure class="effect">
-          <img src="images/sample/5.jpg" alt="">
-          <figcaption>
-            <h2>Lorem <span>Ipsum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="#">View more</a>
-          </figcaption>
-        </figure>
-
-        <figure class="effect">
-          <img src="images/sample/6.jpg" alt="">
-          <figcaption>
-            <h2>Lorem <span>Ipsum</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <a href="#">View more</a>
-          </figcaption>
-        </figure>
-      </div>
+      {call .examples}
+        {param items: [
+          [
+            'name': 'Lorem Ipsum',
+            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'image': 'images/sample/1.jpg',
+            'url': '#1'
+          ],
+          [
+            'name': 'Lorem Ipsum',
+            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'image': 'images/sample/2.jpg',
+            'url': '#2'
+          ],
+          [
+            'name': 'Lorem Ipsum',
+            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'image': 'images/sample/3.jpg',
+            'url': '#3'
+          ],
+          [
+            'name': 'Lorem Ipsum',
+            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'image': 'images/sample/4.jpg',
+            'url': '#4'
+          ],
+          [
+            'name': 'Lorem Ipsum',
+            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'image': 'images/sample/5.jpg',
+            'url': '#5'
+          ],
+          [
+            'name': 'Lorem Ipsum',
+            'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+            'image': 'images/sample/6.jpg',
+            'url': '#6'
+          ]
+        ] /}
+      {/call}
     </div>
   {/param}
 {/call}
+{/template}
+
+/**
+ * @param items
+ */
+{template .examples}
+  <div class="grid">
+    {foreach $item in $items}
+      <figure class="effect">
+        <img src="{$item.image}" alt="">
+        <figcaption>
+          <h2>{$item.name}</h2>
+          <p>{$item.description}</p>
+          <a href="{$item.url}">View more</a>
+        </figcaption>
+      </figure>
+    {/foreach}
+  </div>
 {/template}
