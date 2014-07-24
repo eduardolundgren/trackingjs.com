@@ -28,10 +28,91 @@
       </div>
 
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>In order to understand how the tracker API works, first you need to instantiate the constructor passing the targets you want to detect. Note that <code>tracking.Tracker</code> is an abstract class only used to teach how to use the API.</p>
+
+        {literal}
+        <pre class="code"><code>var myTracker = new tracking.Tracker('target');</code></pre>
+        {/literal}
+
+        <p>
+          Once you have the tracker instance, you need to know when something happens, that's why you need listen for <code>track</code> events:
+        </p>
+        {literal}
+        <pre class="code"><code>myTracker.on('track', function(event) {
+  if (event.data.length === 0) {
+    // No targets were detected in this frame.
+  } else {
+    event.data.forEach(function(data) {
+      // Plots the detected targets here.
+    });
+  }
+});</code></pre>
+{/literal}
+
+        <p>
+          Now that you have the tracker instance listening for <code>track</code> event, you are ready to start tracking by invoking the track implementation <code>myTracker.track(pixels, width, height)</code>. This method handles all the internal logic that processes the pixels and extracts the targets from it.
+        </p>
+
+        <p>
+          But don't worry, you don't need to read the <code>&lt;canvas&gt;</code>, <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> pixels manually, tracking.js provides an utility which handles that for you:
+        </p>
+        <pre class="code"><code>{literal}var trackerTask = tracking.track('#myVideo', myTracker);{/literal}</code></pre>
+
+        <p>
+          It's also possible to plug the tracker instance in other elements. When tracking a <code>&lt;canvas&gt;</code> or <code>&lt;img&gt;</code>, the utility <code>tracking.track('#image', myTracker)</code> invokes only one time <code>myTracker.track(pixels, width, height)</code>. All the required arguments are fulfilled automatically, e.g. array of pixels, width and height. When using with a <code>&lt;video&gt;</code> node it is a little bit different, for each video frame the internal track implementation is executed.
+        </p>
+
+        <p>
+          If you want to have full control of the tracking task you've plugged on the previous example, you may want to continue reading this section. Let's assume you need to stop the tracking from a long-running video:
+        </p>
+
+        {literal}
+        <pre class="code"><code>trackerTask.stop(); // Stops the tracking
+trackerTask.run(); // Runs it again anytime
+</code></pre>
+{/literal}
+
+        <p>The previous example was an abstract overview about the tracker API available. Now let's dig into some practical usages of some of the available trackers.</p>
+
         <h2 class="content-subhead">Color Tracker</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <pre class="code"><code>new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);</code></pre>
+        <p>
+          Colors are everywhere in every single object. Being able to handle colored objects to control your browser through the camera is very appealing. For that reason, tracking.js implemented a basic color tracking algorithm that resulted in a real-time frame rate through a simple and intuitive API.
+          It offers several significant advantages over geometric cues such as computational simplicity, robustness under partial occlusion and illumination, rotation, scale and resolution changes.
+        </p>
+        <p>
+          In order to use a color tracker, first, you need to instantiate the constructor, passing the colors you want to detect:
+        </p>
+        {literal}
+        <pre class="code"><code>var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);</code></pre>
+        {/literal}
+
+        <p>
+          Once you have the color tracker instance, you need to know when something happens, that's why you need listen for <code>track</code> events:
+        </p>
+        {literal}
+        <pre class="code"><code>colors.on('track', function(event) {
+  if (event.data.length === 0) {
+    // No colors were detected in this frame.
+  } else {
+    event.data.forEach(function(rect) {
+      // rect.x, rect.y, rect.height, rect.width, rect.color
+    });
+  }
+});</code></pre>
+{/literal}
+
+        <p>
+          Now that you have the tracker instance listening for <code>track</code> event, you are ready to start tracking:
+        </p>
+
+        {literal}
+        <pre class="code"><code>tracking.track('#myVideo', colors);</code></pre>
+        {/literal}
+
+        <p style="text-align: right;">
+          <a class="pure-button pure-button-primary" href="./examples/color_camera.html">See color tracker in action &gt;</a>
+        </p>
+
         <h2 class="content-subhead">Face Tracker</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <pre class="code"><code>new tracking.ObjectTracker('face');</code></pre>
