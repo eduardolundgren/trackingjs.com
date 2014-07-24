@@ -76,6 +76,12 @@ gulp.task('build-templates', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('build-highlight', function () {
+  return gulp.src('dist/**/*.html')
+    .pipe(plugins.highlight())
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('build', ['clean'], function(cb) {
-  runSequence(['build-images', 'build-icons', 'build-javascript'], 'build-css', 'build-compass', 'build-html', 'build-templates', cb);
+  runSequence(['build-images', 'build-icons', 'build-javascript'], 'build-css', 'build-compass', 'build-html', 'build-templates', 'build-highlight', cb);
 });

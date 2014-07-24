@@ -8,6 +8,7 @@
     "gulp-csscomb": "^3.0.0-1",
     "gulp-csso": "^0.2.9",
     "gulp-esformatter": "^0.5.0",
+    "gulp-highlight": "0.0.3",
     "gulp-iconfont": "^0.1.1",
     "gulp-iconfont-css": "^0.0.9",
     "gulp-if": "^1.2.2",
