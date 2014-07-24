@@ -200,7 +200,7 @@ trackerTask.run(); // Runs it again anytime
         <pre><code class="javascript">var corners = tracking.Fast.findCorners(pixels, width, height);</code></pre>
         {/literal}
 
-        <p style="text-align: right;">
+        <p class="content-subinfo">
           <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
           <a class="pure-button pure-button-primary" href="./examples/fast.html">Live demo &gt;</a>
         </p>
@@ -261,7 +261,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         <pre><code class="javascript">tracking.Image.separableConvolve(pixels, width, height, horizWeights, vertWeights, opaque);</code></pre>
         {/literal}
 
-        <p style="text-align: right;">
+        <p class="content-subinfo">
           <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
         </p>
 
@@ -279,12 +279,28 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         <pre><code class="javascript">tracking.Image.grayscale(pixels, width, height, fillRGBA);</code></pre>
         {/literal}
 
-        <p style="text-align: right;">
+        <p class="content-subinfo">
           <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
         </p>
 
         <h2 class="content-subhead">Image Blur</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          A Gaussian blur (also known as Gaussian smoothing) is the result of blurring an image by a Gaussian function. It is a widely used effect in graphics software, typically to reduce image noise and reduce detail.
+          Gaussian smoothing is also used as a pre-processing stage in computer vision algorithms in order to enhance image structures at different scales.
+        </p>
+
+        <p>
+          To blur the images pixels using tracking.js you can do:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.blur(pixels, width, height, diameter);</code></pre>
+        {/literal}
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
+
         <h2 class="content-subhead">Integral Image</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Sobel</h2>
