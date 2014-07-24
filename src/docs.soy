@@ -31,14 +31,14 @@
         <p>In order to understand how the tracker API works, first you need to instantiate the constructor passing the targets you want to detect. Note that <code>tracking.Tracker</code> is an abstract class only used to teach how to use the API.</p>
 
         {literal}
-        <pre class="code"><code>var myTracker = new tracking.Tracker('target');</code></pre>
+        <pre><code class="javascript">var myTracker = new tracking.Tracker('target');</code></pre>
         {/literal}
 
         <p>
           Once you have the tracker instance, you need to know when something happens, that's why you need listen for <code>track</code> events:
         </p>
         {literal}
-        <pre class="code"><code>myTracker.on('track', function(event) {
+        <pre><code class="javascript">myTracker.on('track', function(event) {
   if (event.data.length === 0) {
     // No targets were detected in this frame.
   } else {
@@ -56,7 +56,9 @@
         <p>
           But don't worry, you don't need to read the <code>&lt;canvas&gt;</code>, <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> pixels manually, tracking.js provides an utility which handles that for you:
         </p>
-        <pre class="code"><code>{literal}var trackerTask = tracking.track('#myVideo', myTracker);{/literal}</code></pre>
+        {literal}
+        <pre><code class="javascript">var trackerTask = tracking.track('#myVideo', myTracker);</code></pre>
+        {/literal}
 
         <p>
           It's also possible to plug the tracker instance in other elements. When tracking a <code>&lt;canvas&gt;</code> or <code>&lt;img&gt;</code>, the utility <code>tracking.track('#image', myTracker)</code> invokes only one time <code>myTracker.track(pixels, width, height)</code>. All the required arguments are fulfilled automatically, e.g. array of pixels, width and height. When using with a <code>&lt;video&gt;</code> node it is a little bit different, for each video frame the internal track implementation is executed.
@@ -67,7 +69,7 @@
         </p>
 
         {literal}
-        <pre class="code"><code>trackerTask.stop(); // Stops the tracking
+        <pre><code class="javascript">trackerTask.stop(); // Stops the tracking
 trackerTask.run(); // Runs it again anytime
 </code></pre>
 {/literal}
@@ -83,14 +85,14 @@ trackerTask.run(); // Runs it again anytime
           In order to use a color tracker, you need to instantiate the constructor passing the colors to detect:
         </p>
         {literal}
-        <pre class="code"><code>var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);</code></pre>
+        <pre><code class="javascript">var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);</code></pre>
         {/literal}
 
         <p>
           Once you have the color tracker instance, you need to know when something happens, that's why you need listen for <code>track</code> events:
         </p>
         {literal}
-        <pre class="code"><code>colors.on('track', function(event) {
+        <pre><code class="javascript">colors.on('track', function(event) {
   if (event.data.length === 0) {
     // No colors were detected in this frame.
   } else {
@@ -106,7 +108,7 @@ trackerTask.run(); // Runs it again anytime
         </p>
 
         {literal}
-        <pre class="code"><code>tracking.track('#myVideo', colors);</code></pre>
+        <pre><code class="javascript">tracking.track('#myVideo', colors);</code></pre>
         {/literal}
 
         <p style="text-align: right;">
@@ -124,7 +126,7 @@ trackerTask.run(); // Runs it again anytime
         </p>
 
         {literal}
-        <pre class="code"><code>&lt;script src="tracking.js/build/data/face.js"&gt;&lt;/script&gt;
+        <pre><code class="html">&lt;script src="tracking.js/build/data/face.js"&gt;&lt;/script&gt;
 &lt;script src="tracking.js/build/data/eye.js"&gt;&lt;/script&gt;
 &lt;script src="tracking.js/build/data/mouth.js"&gt;&lt;/script&gt;
 </code></pre>
@@ -134,14 +136,14 @@ trackerTask.run(); // Runs it again anytime
           In order to use object tracker, you need to instantiate the constructor passing the classifier data to detect:
         </p>
         {literal}
-        <pre class="code"><code>var objects = new tracking.ObjectTracker(['face', 'eye', 'mouth']);</code></pre>
+        <pre><code class="javascript">var objects = new tracking.ObjectTracker(['face', 'eye', 'mouth']);</code></pre>
         {/literal}
 
         <p>
           Once you have the object tracker instance, you need to know when something happens, that's why you need listen for <code>track</code> events:
         </p>
         {literal}
-        <pre class="code"><code>objects.on('track', function(event) {
+        <pre><code class="javascript">objects.on('track', function(event) {
   if (event.data.length === 0) {
     // No objects were detected in this frame.
   } else {
@@ -157,7 +159,7 @@ trackerTask.run(); // Runs it again anytime
         </p>
 
         {literal}
-        <pre class="code"><code>tracking.track('#myVideo', objects);</code></pre>
+        <pre><code class="javascript">tracking.track('#myVideo', objects);</code></pre>
         {/literal}
 
         <p style="text-align: right;">
@@ -200,10 +202,10 @@ trackerTask.run(); // Runs it again anytime
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Color Element</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <pre class="code"><code>&lt;color-tracking&gt;&lt;/color-tracking&gt;</code></pre>
+        <pre><code class="html">&lt;color-tracking&gt;&lt;/color-tracking&gt;</code></pre>
         <h2 class="content-subhead">Face Element</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <pre class="code"><code>&lt;face-tracking&gt;&lt;/face-tracking&gt;</code></pre>
+        <pre><code class="html">&lt;face-tracking&gt;&lt;/face-tracking&gt;</code></pre>
       </div>
     </div>
   {/param}

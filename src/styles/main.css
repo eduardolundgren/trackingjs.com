@@ -20,7 +20,7 @@ code {
   background: rgb(250, 250, 250);
 }
 
-.code {
+pre {
   overflow-x: auto;
   padding: 1em;
   border: 1px solid #eee;
@@ -35,4 +35,11 @@ code {
 
 .content-subhead {
   color: #666;
+}
+
+.code-install {
+  text-align: center;
+  width: 245px;
+  margin: 50px auto 20px;
+  display: block;
 }
