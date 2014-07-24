@@ -6,6 +6,12 @@ h1 {
   font-family: 'Ubuntu', sans-serif;
 }
 
+a {
+  color: #7564DB;
+  text-decoration: none;
+  border-bottom: 1px dotted #7564DB;
+}
+
 p {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -47,4 +53,11 @@ pre {
   width: 245px;
   margin: 50px auto 20px;
   display: block;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+  background: #a64ceb;
 }
