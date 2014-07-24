@@ -302,7 +302,24 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         <h2 class="content-subhead">Integral Image</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          A summed area table is a data structure and algorithm for quickly and efficiently generating the sum of values in a rectangular subset of a grid. In the image processing domain, it is also known as an integral image.
+        </p>
+
+        <p>
+          To compute the images pixels using tracking.js you can do:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.computeIntegralImage(
+    pixels, width, height, opt_integralImage, opt_integralImageSquare,
+    opt_tiltedIntegralImage, opt_integralImageSobel);</code></pre>
+        {/literal}
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
+
         <h2 class="content-subhead">Sobel</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Viola Jones</h2>
