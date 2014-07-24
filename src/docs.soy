@@ -167,7 +167,6 @@ trackerTask.run(); // Runs it again anytime
           <a class="pure-button pure-button-primary" href="./examples/face_camera.html">Live demo &gt;</a>
         </p>
 
-
       </div>
 
       <div class="header">
@@ -175,9 +174,40 @@ trackerTask.run(); // Runs it again anytime
       </div>
 
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <h2 class="content-subhead">Brief</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          For a better understanding of the library architecture, the implementation is divided in several utilities, it also includes several computer vision algorithms to help you implement your custom solutions.
+          To develop computer vision applications using only raw JavaScript APIs could be too verbose and complex, e.g. capturing users' camera and reading its array of pixels.
+          The big amount of steps required for a simple task makes web developers life hard when the goal is to achieve complex implementations. Some level of encapsulation is needed in order to simplify development.
+          The proposed library provides encapsulation for common tasks on the web platform.
+        </p>
+
+        <h2 class="content-subhead">Feature Descriptor (Brief)</h2>
+        <p>
+          Provides an implementation of <a href="http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf" target="_blank">Binary Robust Independent Elementary Features</a>. It uses binary strings as an efficient feature point descriptor. As a result, BRIEF is very fast both to build and to match, perfect for the web.
+        </p>
+
+        <p>
+          Once you have extracted image features, in our previous example the features were the image corners, you can describe each of them:
+        </p>
+
+        {literal}
+        <pre class="code"><code>var descriptors1 = tracking.Brief.getDescriptors(pixels, width, corners1);
+var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code></pre>
+        {/literal}
+
+        <p>
+          BRIEF also provides a method that you can match the features decribed in <code>descriptors1</code> and <code>descriptors2</code>:
+        </p>
+
+        {literal}
+        <pre class="code"><code>var matches = tracking.Brief.reciprocalMatch(corners1, descriptors1, corners2, descriptors2);</code></pre>
+        {/literal}
+
+        <p style="text-align: right;">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+          <a class="pure-button pure-button-primary" href="./examples/brief_camera.html">Live demo &gt;</a>
+        </p>
+
         <h2 class="content-subhead">Convolution</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Fast</h2>
