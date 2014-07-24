@@ -168,6 +168,75 @@ trackerTask.run(); // Runs it again anytime
           <a class="pure-button pure-button-primary" href="./examples/face_camera.html">Live demo &gt;</a>
         </p>
 
+        <h2 class="content-subhead">Custom Tracker</h2>
+        <p>
+          It's easy to create your own tracker whenever you need one.
+        </p>
+
+        <p>
+          Let's say for example that, for some reason, you need to build an application that finds shadows in images.  Our trackers currently don't support this use case yet, so you'll need to implement the algorithm yourself.
+        </p>
+
+        <p>
+          Don't walk away yet though! You have the option of building your feature on top of tracking.js and, if you do so, you'll be able to take advantage of all the abstractions it provides, like accessing the camera and getting the pixel matrix through the canvas on every frame.
+        </p>
+
+        <p>
+          It's simple! First, you just need to create a constructor for your new tracker (let's call it <code>MyTracker</code>) and have it inherit from <code>tracking.Tracker</code>:
+        </p>
+
+        {literal}
+        <pre><code class="html">var MyTracker = function() {
+  MyTracker(this, 'constructor');
+}
+tracking.inherits(MyTracker, tracking.Tracker);
+</code></pre>
+        {/literal}
+
+        <p>
+          Then, you need to implement the <code>track</code> method for your tracker. It will receive the pixel matrix for the current image (or video frame) and should hold the actual tracking algorithm. When the tracking is done, the code should call the <code>emit</code> method to send the results through the <code>track</code> event:
+        </p>
+        {literal}
+        <pre><code class="javascript">var MyTracker = function() {
+  MyTracker.prototype.track = function(pixels, width, height) {
+    // Your code here
+
+    this.emit('track', {
+      // Your results here
+    });
+  }
+}</code></pre>
+        {/literal}
+
+        <p>
+          That's it! You can now use your tracker in the same way the other existing trackers are used. First, create an instance of it:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">var myTracker = new tracking.MyTracker();</code></pre>
+        {/literal}
+
+        <p>
+          Then, listen to it's <code>track</code> events:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">myTracker.on('track', function(event) {
+  // Results are inside the event
+});</code></pre>
+        {/literal}
+
+        <p>
+          And finally, start tracking:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.track('#myVideo', myTracker);</code></pre>
+        {/literal}
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
       </div>
 
       <div class="header">
