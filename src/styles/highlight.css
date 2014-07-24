@@ -167,3 +167,7 @@
 .html .hljs-title {
   color: #3182bd;
 }
+
+.nohighlight .hljs-keyword {
+  color: #555;
+}
