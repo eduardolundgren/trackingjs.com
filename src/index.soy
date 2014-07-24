@@ -7,10 +7,13 @@
  */
 {template .soyweb}
 {call main.page}
+  {param baseDir: './' /}
   {param content}
     <link rel="stylesheet" href="styles/home-grid.css">
 
-    {call menu.side}{/call}
+    {call menu.side}
+      {param baseDir: './' /}
+    {/call}
 
     <div id="main">
       <div class="header">
