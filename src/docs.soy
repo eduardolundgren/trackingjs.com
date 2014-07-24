@@ -191,7 +191,7 @@ trackerTask.run(); // Runs it again anytime
         </p>
 
         {literal}
-        <pre class="code"><code>var descriptors1 = tracking.Brief.getDescriptors(pixels, width, corners1);
+        <pre><code class="javascript">var descriptors1 = tracking.Brief.getDescriptors(pixels, width, corners1);
 var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code></pre>
         {/literal}
 
@@ -200,7 +200,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         {literal}
-        <pre class="code"><code>var matches = tracking.Brief.reciprocalMatch(corners1, descriptors1, corners2, descriptors2);</code></pre>
+        <pre><code class="javascript">var matches = tracking.Brief.reciprocalMatch(corners1, descriptors1, corners2, descriptors2);</code></pre>
         {/literal}
 
         <p style="text-align: right;">
