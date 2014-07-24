@@ -178,14 +178,36 @@ trackerTask.run(); // Runs it again anytime
         <p>
           For a better understanding of the library architecture, the implementation is divided in several utilities, it also includes several computer vision algorithms to help you implement your custom solutions.
           To develop computer vision applications using only raw JavaScript APIs could be too verbose and complex, e.g. capturing users' camera and reading its array of pixels.
+        </p>
+
+        <p>
           The big amount of steps required for a simple task makes web developers life hard when the goal is to achieve complex implementations. Some level of encapsulation is needed in order to simplify development.
           The proposed library provides encapsulation for common tasks on the web platform.
         </p>
         <p class="content-subinfo"></p>
 
+        <h2 class="content-subhead">Feature Detection (Fast)</h2>
+        <p>
+          Provides an implementation of <a href="http://en.wikipedia.org/wiki/Features_from_accelerated_segment_test" target="_blank">Features from Accelerated Segment Test</a> for features detection.
+          In other words it finds corners on parts of the image. Fast is faster than many other well-known feature extraction methods.
+        </p>
+
+        <p>
+          To find corners, tracking.js provides the following utility:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">var corners = tracking.Fast.findCorners(pixels, width, height);</code></pre>
+        {/literal}
+
+        <p style="text-align: right;">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+          <a class="pure-button pure-button-primary" href="./examples/fast.html">Live demo &gt;</a>
+        </p>
+
         <h2 class="content-subhead">Feature Descriptor (Brief)</h2>
         <p>
-          Provides an implementation of <a href="http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf" target="_blank">Binary Robust Independent Elementary Features</a>. It uses binary strings as an efficient feature point descriptor. As a result, BRIEF is very fast both to build and to match, perfect for the web.
+          Provides an implementation of <a href="http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf" target="_blank">Binary Robust Independent Elementary Features</a>. It uses binary strings as an efficient feature point descriptor. As a result, Brief is very fast both to build and to match, perfect for the web.
         </p>
 
         <p>
@@ -198,7 +220,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         {/literal}
 
         <p>
-          BRIEF also provides a method that you can match the features decribed in <code>descriptors1</code> and <code>descriptors2</code>:
+          Brief also provides a method that you can match the features decribed in <code>descriptors1</code> and <code>descriptors2</code>:
         </p>
 
         {literal}
@@ -211,8 +233,6 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         <h2 class="content-subhead">Convolution</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <h2 class="content-subhead">Fast</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Gray Scale</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
