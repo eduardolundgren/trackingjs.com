@@ -95,6 +95,7 @@ body {
   padding-left: 25px;
   transition: all .2s linear;
   color: #949599;
+  border-left: 3px solid transparent;
 }
 
 #menu .pure-menu li a:hover,
@@ -112,9 +113,13 @@ body {
   background: #2e2f33;
 }
 
-#menu .pure-menu li.main-item a {
+#menu .pure-menu li.main-item {
   font-weight: 400;
-  padding-left: 10px;
+  padding: 5px 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
 #menu .pure-menu-heading {
