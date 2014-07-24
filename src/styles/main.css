@@ -37,6 +37,11 @@ pre {
   color: #666;
 }
 
+.content-subinfo {
+  text-align: right;
+  height: 35px;
+}
+
 .code-install {
   text-align: center;
   width: 245px;
