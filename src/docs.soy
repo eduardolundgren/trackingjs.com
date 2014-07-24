@@ -321,7 +321,23 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         <h2 class="content-subhead">Sobel</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          Computes the vertical and horizontal gradients of the image and combines the computed images to find edges in the image.
+          The way we implement the Sobel filter here is by first grayscaling the image, then taking the horizontal and vertical gradients and finally combining the gradient images to make up the final image.
+        </p>
+
+        <p>
+          To compute the edges of the image pixels using tracking.js you can do:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.sobel(pixels, width, height);</code></pre>
+        {/literal}
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
+
         <h2 class="content-subhead">Viola Jones</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
       </div>
