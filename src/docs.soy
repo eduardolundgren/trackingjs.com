@@ -233,7 +233,38 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         <h2 class="content-subhead">Convolution</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          Convolution filters are very useful generic filters for image processing. The basic idea is that you take the weighed sum of a rectangle of pixels from the source image and use that as the output value. Convolution filters can be used for blurring, sharpening, embossing, edge detection and a whole bunch of other things.
+        </p>
+
+        <p>
+          In order to horizontally convolve image pixels you can do:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.horizontalConvolve(pixels, width, height, weightsVector, opaque);</code></pre>
+        {/literal}
+
+        <p>
+          In order to vertically convolve image pixels you can do:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.verticalConvolve(pixels, width, height, weightsVector, opaque);</code></pre>
+        {/literal}
+
+        <p>
+          Or, if you need to do a separable convolve:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.separableConvolve(pixels, width, height, horizWeights, vertWeights, opaque);</code></pre>
+        {/literal}
+
+        <p style="text-align: right;">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
+
         <h2 class="content-subhead">Gray Scale</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Image Blur</h2>
