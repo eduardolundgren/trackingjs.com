@@ -339,7 +339,23 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         <h2 class="content-subhead">Viola Jones</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          The <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola–Jones</a> object detection framework is the first object detection framework to provide competitive object detection rates in real-time.
+          This techinique is used inside <code>tracking.ObjectTracker</code> implementation.
+        </p>
+
+        <p>
+          To use Viola Jones to detect an object of an image pixels using tracking.js you can do:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.ViolaJones.detect(pixels, width, height, initialScale, scaleFactor, stepSize, edgesDensity, classifier);</code></pre>
+        {/literal}
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
+
       </div>
 
       <div class="header">
