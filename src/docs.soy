@@ -266,7 +266,23 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         </p>
 
         <h2 class="content-subhead">Gray Scale</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          Converts a color from a colorspace based on an RGB color model to a grayscale representation of its luminance.
+          The coefficients represent the measured intensity perception of typical trichromat humans, in particular, human vision is most sensitive to green and least sensitive to blue.
+        </p>
+
+        <p>
+          To convert the images pixels into grayscale:
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.Image.grayscale(pixels, width, height, fillRGBA);</code></pre>
+        {/literal}
+
+        <p style="text-align: right;">
+          <a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>{sp}
+        </p>
+
         <h2 class="content-subhead">Image Blur</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
         <h2 class="content-subhead">Integral Image</h2>
