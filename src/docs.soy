@@ -80,7 +80,7 @@ trackerTask.run(); // Runs it again anytime
           It offers several significant advantages over geometric cues such as computational simplicity, robustness under partial occlusion and illumination, rotation, scale and resolution changes.
         </p>
         <p>
-          In order to use a color tracker, first, you need to instantiate the constructor, passing the colors you want to detect:
+          In order to use a color tracker, you need to instantiate the constructor passing the colors to detect:
         </p>
         {literal}
         <pre class="code"><code>var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);</code></pre>
@@ -113,9 +113,57 @@ trackerTask.run(); // Runs it again anytime
           <a class="pure-button pure-button-primary" href="./examples/color_camera.html">See color tracker in action &gt;</a>
         </p>
 
-        <h2 class="content-subhead">Face Tracker</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <pre class="code"><code>new tracking.ObjectTracker('face');</code></pre>
+        <h2 class="content-subhead">Object Tracker</h2>
+        <p>
+          Having a rapid object detection as part of the library resulted in interesting examples for web applications, such as detecting faces, mouths, eyes and any other training data that could be added to the library later.
+        </p>
+
+        <p>
+          In addition to the tracking.js core script, the training data for the object targets you want to track needs to be included:
+        </p>
+
+        {literal}
+        <pre class="code"><code>&lt;script src="tracking.js/build/data/face.js"&gt;&lt;/script&gt;
+&lt;script src="tracking.js/build/data/eye.js"&gt;&lt;/script&gt;
+&lt;script src="tracking.js/build/data/mouth.js"&gt;&lt;/script&gt;
+</code></pre>
+        {/literal}
+
+        <p>
+          In order to use object tracker, you need to instantiate the constructor passing the classifier data to detect:
+        </p>
+        {literal}
+        <pre class="code"><code>var objects = new tracking.ObjectTracker(['face', 'eye', 'mouth']);</code></pre>
+        {/literal}
+
+        <p>
+          Once you have the object tracker instance, you need to know when something happens, that's why you need listen for <code>track</code> events:
+        </p>
+        {literal}
+        <pre class="code"><code>objects.on('track', function(event) {
+  if (event.data.length === 0) {
+    // No objects were detected in this frame.
+  } else {
+    event.data.forEach(function(rect) {
+      // rect.x, rect.y, rect.height, rect.width
+    });
+  }
+});</code></pre>
+{/literal}
+
+        <p>
+          Now that you have the tracker instance listening for <code>track</code> event, you are ready to start tracking:
+        </p>
+
+        {literal}
+        <pre class="code"><code>tracking.track('#myVideo', objects);</code></pre>
+        {/literal}
+
+        <p style="text-align: right;">
+          <a class="pure-button pure-button-primary" href="./examples/face_camera.html">See object tracker in action &gt;</a>
+        </p>
+
+
       </div>
 
       <div class="header">
