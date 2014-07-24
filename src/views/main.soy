@@ -2,6 +2,7 @@
 
 /**
  * @param content
+ * @param baseDir
  */
 {template .page}
 <!doctype html>
@@ -19,9 +20,9 @@
   <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100|Ubuntu" rel="stylesheet" type="text/css">
 
   <!-- build:css styles/all.min.css -->
-  <link rel="stylesheet" href="../bower_components/pure/pure-min.css">
-  <link rel="stylesheet" href="styles/side-menu.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="{$baseDir}../bower_components/pure/pure-min.css">
+  <link rel="stylesheet" href="{$baseDir}styles/side-menu.css">
+  <link rel="stylesheet" href="{$baseDir}styles/main.css">
   <!-- endbuild -->
 </head>
 <body>
@@ -30,7 +31,7 @@
   </div>
 
   <!-- build:js scripts/all.min.js -->
-  <script src="scripts/side-menu.js"></script>
+  <script src="{$baseDir}scripts/side-menu.js"></script>
   <!-- endbuild -->
 </body>
 </html>

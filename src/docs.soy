@@ -7,8 +7,11 @@
  */
 {template .soyweb}
 {call main.page}
+  {param baseDir: './' /}
   {param content}
-    {call menu.side}{/call}
+    {call menu.side}
+      {param baseDir: './' /}
+    {/call}
 
     <div id="main">
       <div class="header">
