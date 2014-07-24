@@ -27,8 +27,6 @@
                 </li>
                 <li><a href="' + soy.$$escapeHtml(opt_data.baseDir) + 'examples/face_tag_friends.html">Face Tag Friends</a>
                 </li>
-                <li><a href="' + soy.$$escapeHtml(opt_data.baseDir) + 'examples/face_three.html">Face Three.js</a>
-                </li>
                 <li><a href="' + soy.$$escapeHtml(opt_data.baseDir) + 'examples/fast.html">Fast</a>
                 </li>
             </ul>

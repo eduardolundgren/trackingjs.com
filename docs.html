@@ -46,8 +46,6 @@
                     </li>
                     <li><a href="./examples/face_tag_friends.html">Face Tag Friends</a>
                     </li>
-                    <li><a href="./examples/face_three.html">Face Three.js</a>
-                    </li>
                     <li><a href="./examples/fast.html">Fast</a>
                     </li>
                 </ul>
@@ -203,8 +201,12 @@ var descriptors2 = tracking<span class="hljs-preprocessor">.Brief</span><span cl
                 <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
                 </p>
                 <h2 class="content-subhead">Viola Jones</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto,
-                    atque!</p>
+                <p>The <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola–Jones</a> object detection framework is the first object detection framework to provide competitive object detection rates in
+                    real-time. This techinique is used inside <code>tracking<span class="hljs-preprocessor">.ObjectTracker</span></code> implementation.</p>
+                <p>To use Viola Jones to detect an object of an image pixels using tracking.js you can do:</p>
+                <pre><code class="javascript">tracking<span class="hljs-preprocessor">.ViolaJones</span><span class="hljs-preprocessor">.detect</span>(pixels, width, height, initialScale, scaleFactor, stepSize, edgesDensity, classifier)<span class="hljs-comment">;</span></code></pre>
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                </p>
             </div>
             <div class="header">
                 <h2 id="web-components">Web Components</h2>
