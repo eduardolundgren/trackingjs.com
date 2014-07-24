@@ -1,0 +1,9 @@
+{namespace example} /** * @param name * @param baseDir */ {template .page} {call main.page} {param baseDir: $baseDir /} {param content}
+<link rel="stylesheet" href="{$baseDir}styles/example.css">{call menu.side} {param baseDir: $baseDir /} {/call}
+
+<div id="main">
+    <div class="iframe-container">
+        <iframe src="{$baseDir}../bower_components/tracking.js/examples/{$name}.html"></iframe>
+    </div>
+</div>
+{/param} {/call} {/template}

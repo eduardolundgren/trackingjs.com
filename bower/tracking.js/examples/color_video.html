@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tracking.js - color with video</title>
+  <link rel="stylesheet" href="assets/demo.css">
+
+  <script src="../build/tracking-min.js"></script>
+
+  <style>
+  #rectangle {
+    height: 80px;
+    left: -1000px;
+    position: absolute;
+    top: -1000px;
+    width: 120px;
+  }
+  </style>
+</head>
+<body>
+  <div class="demo-title">
+    <p><a href="http://trackingjs.com">tracking.js</a> － detect certain colors in a video</p>
+  </div>
+
+  <div class="demo-frame">
+    <div class="demo-container">
+      <div id="rectangle"></div>
+      <video id="video" width="800" height="530" preload autoplay loop muted controls>
+        <source src="assets/color.mp4"  type="video/mp4">
+        <source src="assets/color.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function() {
+      var rectangle = document.getElementById('rectangle');
+      var video = document.getElementById('video');
+
+      var tracker = new tracking.ColorTracker();
+      tracker.setMinDimension(5);
+
+      tracking.track('#video', tracker);
+
+      tracker.on('track', function(event) {
+        if (event.data.length === 0) {
+          rectangle.style.top = '-1000px';
+          return;
+        }
+        event.data.forEach(function(rect) {
+          rectangle.style.border = '2px solid ' + rect.color;
+          rectangle.style.width = rect.width + 'px';
+          rectangle.style.height = rect.height + 'px';
+          rectangle.style.left = (video.offsetLeft + rect.x) + 'px';
+          rectangle.style.top = (video.offsetTop + rect.y) + 'px';
+        });
+      });
+    };
+  </script>
+
+</body>
+</html>
