@@ -14,7 +14,7 @@
     {/call}
 
     <div id="main">
-      <div class="header">
+      <div class="header" id="introduction">
         <h1>tracking.js</h1>
       </div>
 
@@ -446,6 +446,17 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
         <p class="content-subinfo"></p>
       </div>
     </div>
+    <script src="http://cdn.alloyui.com/3.0.0pr2/aui/aui-min.js"></script>
+    <script>
+    {literal}
+      YUI().use('aui-scrollspy', function(Y) {
+        new Y.Scrollspy({
+          activeClass: 'pure-menu-selected',
+          target: '#menu'
+        });
+      });
+    {/literal}
+    </script>
   {/param}
 {/call}
 {/template}

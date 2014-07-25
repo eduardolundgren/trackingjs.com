@@ -4,21 +4,7 @@
   var active = 'active',
     layout = document.getElementById('layout'),
     menu = document.getElementById('menu'),
-    menuLink = document.getElementById('menuLink'),
-    items = document.querySelectorAll('#menu a'),
-    url = window.location.href;
-
-  // Active menu class
-  for (var i = 0; i < items.length; i++) {
-    if (url === items[i].href) {
-      if (items[i].classList.contains('pure-menu-heading')) {
-        items[i].classList.add('home-menu-selected');
-      }
-      else {
-        items[i].parentNode.classList.add('pure-menu-selected');
-      }
-    }
-  }
+    menuLink = document.getElementById('menuLink');
 
   function toggleClass(element, className) {
     var classes = element.className.split(/\s+/),
