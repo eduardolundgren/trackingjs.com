@@ -65,15 +65,24 @@ gulp.task('build-javascript', function() {
     .pipe(gulp.dest('dist/scripts'));
 });
 
-gulp.task('build-templates', function() {
-  return gulp.src('src/**/*.soy')
-    .pipe(plugins.plumber(util.logError))
+gulp.task('build-templates-root', function() {
+  return gulp.src(['src/*.soy', 'src/views/*.soy'])
     .pipe(plugins.soynode({
       loadCompiledTemplates: true,
       renderSoyWeb: true
     }))
     .pipe(util.buildHtml())
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build-templates-examples', function() {
+  return gulp.src(['src/examples/*.soy', 'src/views/*.soy'])
+    .pipe(plugins.soynode({
+      loadCompiledTemplates: true,
+      renderSoyWeb: true
+    }))
+    .pipe(util.buildHtml())
+    .pipe(gulp.dest('dist/examples'));
 });
 
 gulp.task('build-highlight', function () {
@@ -83,5 +92,5 @@ gulp.task('build-highlight', function () {
 });
 
 gulp.task('build', ['clean'], function(cb) {
-  runSequence(['build-images', 'build-icons', 'build-javascript'], 'build-css', 'build-compass', 'build-html', 'build-templates', 'build-highlight', cb);
+  runSequence(['build-images', 'build-icons', 'build-javascript'], 'build-css', 'build-compass', 'build-html', 'build-templates-root', 'build-templates-examples', 'build-highlight', cb);
 });

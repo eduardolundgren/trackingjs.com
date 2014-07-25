@@ -4,7 +4,7 @@ var gulp = require('gulp');
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['build-html']);
-  gulp.watch('src/**/*.soy', ['build-templates']);
+  gulp.watch('src/**/*.soy', ['build-templates-root', 'build-templates-examples']);
   gulp.watch('src/images/**/*.{gif,jpeg,jpg,png,svg}', ['build-images']);
   gulp.watch('src/images/icons/*.svg', ['build-icons']);
   gulp.watch('src/scripts/**/*.js', ['build-javascript']);
