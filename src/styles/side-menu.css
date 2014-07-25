@@ -19,15 +19,15 @@ body {
 
 #layout.active {
   position: relative;
-  left: 170px;
+  left: 185px;
 }
 #layout.active #menu {
-  left: 170px;
-  width: 170px;
+  left: 185px;
+  width: 185px;
 }
 
 #layout.active .menu-link {
-  left: 170px;
+  left: 185px;
 }
 
 .content {
@@ -66,8 +66,8 @@ body {
   bottom: 0;
   left: 0;
   overflow-y: auto;
-  width: 170px;
-  margin-left: -170px;
+  width: 185px;
+  margin-left: -185px;
   background: #222326;
   -webkit-overflow-scrolling: touch;
 }
@@ -192,21 +192,21 @@ body {
 
   #layout {
     left: 0;
-    padding-left: 170px;
+    padding-left: 185px;
   }
 
   #menu {
-    left: 170px;
+    left: 185px;
   }
 
   .menu-link {
     position: fixed;
-    left: 170px;
+    left: 185px;
     display: none;
   }
 
   #layout.active .menu-link {
-    left: 170px;
+    left: 185px;
   }
 }
 
