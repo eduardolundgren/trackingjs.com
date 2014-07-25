@@ -133,6 +133,38 @@ trackerTask.run(); <span class="hljs-comment">// Runs it again anytime</span>
                 <pre><code class="javascript">tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#myVideo'</span>, objects);</code></pre>
                 <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/face_camera.html">Live demo &gt;</a>
                 </p>
+                <h2 class="content-subhead">Custom Tracker</h2>
+                <p>It's easy to create your own tracker whenever you need one.</p>
+                <p>Let's say for example that, for some reason, you need to build an application that finds shadows in images. Our trackers currently don't support this use case yet, so you'll need to implement the algorithm yourself.</p>
+                <p>Don't walk away yet though! You have the option of building your feature on top of tracking.js and, if you do so, you'll be able to take advantage of all the abstractions it provides, like accessing the camera and getting the pixel matrix
+                    through the canvas on every frame.</p>
+                <p>It's simple! First, you just need to create a constructor for your new tracker (let's call it <code>MyTracker</code>) and have it inherit from <code>tracking<span class="hljs-preprocessor">.Tracker</span></code>:</p>
+                <pre><code class="html"><span class="hljs-keyword">var</span> MyTracker = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  MyTracker(<span class="hljs-keyword">this</span>, <span class="hljs-string">'constructor'</span>);
+}
+tracking.inherits(MyTracker, tracking.Tracker);
+</code></pre>
+                <p>Then, you need to implement the <code><span class="hljs-keyword">track</span></code> method for your tracker. It will receive the pixel matrix for the current image (or video frame) and should hold the actual tracking algorithm. When the tracking is done, the code should
+                    call the <code><span class="hljs-keyword">emit</span></code> method to send the results through the <code><span class="hljs-keyword">track</span></code> event:</p>
+                <pre><code class="javascript"><span class="hljs-keyword">var</span> MyTracker = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+  MyTracker.prototype.track = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(pixels, width, height)</span> {</span>
+    <span class="hljs-comment">// Your code here</span>
+
+    <span class="hljs-keyword">this</span>.emit(<span class="hljs-string">'track'</span>, {
+      <span class="hljs-comment">// Your results here</span>
+    });
+  }
+}</code></pre>
+                <p>That's it! You can now use your tracker in the same way the other existing trackers are used. First, create an instance of it:</p>
+                <pre><code class="javascript"><span class="hljs-keyword">var</span> myTracker = <span class="hljs-keyword">new</span> tracking.MyTracker();</code></pre>
+                <p>Then, listen to it's <code><span class="hljs-keyword">track</span></code> events:</p>
+                <pre><code class="javascript">myTracker.<span class="hljs-keyword">on</span>(<span class="hljs-string">'track'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(<span class="hljs-keyword">event</span>)</span> <span class="hljs-comment">{
+  // Results are inside the event
+}</span>);</span></code></pre>
+                <p>And finally, start tracking:</p>
+                <pre><code class="javascript">tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#myVideo'</span>, myTracker);</code></pre>
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                </p>
             </div>
             <div class="header">
                 <h2 id="utilities">Utilities</h2>
