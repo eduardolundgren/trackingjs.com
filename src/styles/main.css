@@ -68,6 +68,7 @@ a.pure-button-selected {
 
 .btn-download {
   text-transform: uppercase;
+  padding: 1em;
 }
 
 .btn-download-icon {

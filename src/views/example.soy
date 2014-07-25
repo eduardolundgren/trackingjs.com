@@ -4,6 +4,7 @@
  * @param baseDir
  * @param url
  * @param sourceUrl
+ * @param cssScope
  */
 {template .page}
 {call main.page}
@@ -13,6 +14,7 @@
 
     {call menu.side}
       {param baseDir: $baseDir /}
+      {param cssScope: $cssScope /}
     {/call}
 
     <div id="main">
