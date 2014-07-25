@@ -3,6 +3,7 @@
 /**
  * @param baseDir
  * @param url
+ * @param sourceUrl
  */
 {template .page}
 {call main.page}
@@ -17,6 +18,7 @@
     <div id="main">
       <div class="iframe-container">
         <iframe src="{$url}"></iframe>
+        <a href="{$sourceUrl}" class="view-source" target="_blank">View source</a>
       </div>
     </div>
   {/param}
