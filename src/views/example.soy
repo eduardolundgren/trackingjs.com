@@ -1,8 +1,8 @@
 {namespace example}
 
 /**
- * @param name
  * @param baseDir
+ * @param url
  */
 {template .page}
 {call main.page}
@@ -16,7 +16,7 @@
 
     <div id="main">
       <div class="iframe-container">
-        <iframe src="{$baseDir}../bower_components/tracking.js/examples/{$name}.html"></iframe>
+        <iframe src="{$url}"></iframe>
       </div>
     </div>
   {/param}
