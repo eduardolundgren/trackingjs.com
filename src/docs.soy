@@ -193,6 +193,25 @@ trackerTask.run(); // Runs it again anytime
         <pre><code class="javascript">tracking.track('#myVideo', colors);</code></pre>
         {/literal}
 
+        <p>
+          How do I register my own color? By default tracking.js color tracker provides out of the box three default colors, they are: magenta, cyan and yellow.
+          In addition to those, you can register any custom color you want to track, it's very simple, let's assume the color you want to track is green.
+          In the RGB color space the green color could be some value close to <code>(r, g, b) = (0, 255, 0)</code>, where <code>(r, g, b)</code> stands for red, green and blue, respectively. Once you understand the color to track in the RGB color space, it's time to register your color using <code class="javascript">tracking.ColorTracker.registerColor</code>.
+        </p>
+
+        {literal}
+        <pre><code class="javascript">tracking.ColorTracker.registerColor('green', function(r, g, b) {
+  if (r < 50 && g > 200 && b < 50) {
+    return true;
+  }
+  return false;
+});</code></pre>
+        {/literal}
+
+        <p>
+          Note that the custom color function returns <code>true</code> to any value that the <code>g</code> value is close to 255, to make sure we exclude other colors that could fit with the green RGB pattern, it also checks <code>r</code> and <code>b</code> values to make sure they are below <code>50</code>, hence close to <code>(r, g, b) = (0, 255, 0).
+        </p>
+
         <p class="content-subinfo">
           <a class="pure-button" href="http://trackingjs.com/api/tracking.ColorTracker.html" target="_blank">API docs</a>{sp}
           <a class="pure-button pure-button-primary" href="./examples/color_hello_world.html">Live demo &gt;</a>
