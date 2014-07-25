@@ -21,7 +21,7 @@
 
       <div class="content">
         <p>
-          This project will introduce you to most of the key concepts in working with tracking.js. Don't worry if you don't understand everything. Each of the concepts presented here is described in detail in the <a href="https://github.com/eduardolundgren/tracking.js/tree/master/examples" target="_blank">source code of the examples</a>.
+          This documentation will introduce you to most of the key concepts in working with tracking.js. Don't worry if you don't understand everything. Each of the concepts presented here is described in detail in the <a href="https://github.com/eduardolundgren/tracking.js/tree/master/examples" target="_blank">source code of the examples</a>.
         </p>
 
         <div class="header">
@@ -201,7 +201,7 @@ trackerTask.run(); // Runs it again anytime
 
         {literal}
         <pre><code class="javascript">tracking.ColorTracker.registerColor('green', function(r, g, b) {
-  if (r < 50 && g > 200 && b < 50) {
+  if (r &lt; 50 && g &gt; 200 && b &lt; 50) {
     return true;
   }
   return false;
@@ -209,7 +209,7 @@ trackerTask.run(); // Runs it again anytime
         {/literal}
 
         <p>
-          Note that the custom color function returns <code>true</code> to any value that the <code>g</code> value is close to 255, to make sure we exclude other colors that could fit with the green RGB pattern, it also checks <code>r</code> and <code>b</code> values to make sure they are below <code>50</code>, hence close to <code>(r, g, b) = (0, 255, 0).
+          Note that the custom color function returns <code>true</code> to any value that the <code>g</code> value is close to 255, to make sure we exclude other colors that could fit with the green RGB pattern, it also checks <code>r</code> and <code>b</code> values to make sure they are below <code>50</code>, hence close to <code>(r, g, b) = (0, 255, 0)</code>.
         </p>
 
         <p class="content-subinfo">
@@ -223,7 +223,7 @@ trackerTask.run(); // Runs it again anytime
         </p>
 
         <p>
-          In addition to the tracking.js core script, the training data for the object targets you want to track needs to be included:
+          In addition to the tracking.js core script, there are some training classifiers, they are going to teach tracking.js core how to recognize the object you want to track, make sure to only include the ones you need, each of them have an average size of ~60 KB:
         </p>
 
         {literal}
