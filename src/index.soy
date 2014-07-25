@@ -42,40 +42,40 @@
         {call .examples}
           {param items: [
             [
-              'name': 'Lorem Ipsum',
+              'name': 'Tag Friends',
               'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-              'image': 'images/sample/1.jpg',
-              'url': '#1'
+              'image': 'images/app/tag_friends.jpg',
+              'url': './examples/face_tag_friends.html'
             ],
             [
-              'name': 'Lorem Ipsum',
+              'name': 'Iron Spheres',
               'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-              'image': 'images/sample/2.jpg',
-              'url': '#2'
+              'image': 'images/app/iron_spheres.jpg',
+              'url': './examples/face_fish_tank.html'
             ],
             [
-              'name': 'Lorem Ipsum',
+              'name': 'Racing Car',
               'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-              'image': 'images/sample/3.jpg',
-              'url': '#3'
+              'image': 'images/app/racing_car.jpg',
+              'url': './examples/color_hexgl.html'
             ],
             [
-              'name': 'Lorem Ipsum',
+              'name': 'Draw<br>Something',
               'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-              'image': 'images/sample/4.jpg',
-              'url': '#4'
+              'image': 'images/app/draw_something.jpg',
+              'url': './examples/color_draw_something.html'
             ],
             [
-              'name': 'Lorem Ipsum',
+              'name': 'Random<br>Particles',
               'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-              'image': 'images/sample/5.jpg',
-              'url': '#5'
+              'image': 'images/app/random_particles.jpg',
+              'url': './color_fish_tank.html'
             ],
             [
-              'name': 'Lorem Ipsum',
+              'name': 'Create<br>your own',
               'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-              'image': 'images/sample/6.jpg',
-              'url': '#6'
+              'image': 'images/app/github_repo.jpg',
+              'url': 'https://github.com/eduardolundgren/tracking.js'
             ]
           ] /}
         {/call}
@@ -94,7 +94,7 @@
       <figure class="effect">
         <img src="{$item.image}" alt="">
         <figcaption>
-          <h2>{$item.name}</h2>
+          <h2>{$item.name|noAutoescape}</h2>
           <p>{$item.description}</p>
           <a href="{$item.url}">View more</a>
         </figcaption>
