@@ -108,7 +108,7 @@
       </div>
 
       <div class="content">
-        <p>In order to understand how the tracker API works, first you need to instantiate the constructor passing the targets you want to detect. Note that <code>tracking.Tracker</code> is an abstract class only used to teach how to use the API.</p>
+        <p>In order to understand how the tracker API works, first you need to instantiate the constructor passing the targets you want to detect. Note that <code class="javascript">tracking.Tracker</code> is an abstract class only used to teach how to use the API.</p>
 
         {literal}
         <pre><code class="javascript">var myTracker = new tracking.Tracker('target');</code></pre>
@@ -130,18 +130,18 @@
 {/literal}
 
         <p>
-          Now that you have the tracker instance listening for <code>track</code> event, you are ready to start tracking by invoking the track implementation <code>myTracker.track(pixels, width, height)</code>. This method handles all the internal logic that processes the pixels and extracts the targets from it.
+          Now that you have the tracker instance listening for <code>track</code> event, you are ready to start tracking by invoking the track implementation <code class="javascript">myTracker.track(pixels, width, height)</code>. This method handles all the internal logic that processes the pixels and extracts the targets from it.
         </p>
 
         <p>
-          But don't worry, you don't need to read the <code>&lt;canvas&gt;</code>, <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> pixels manually, tracking.js provides an utility which handles that for you:
+          But don't worry, you don't need to read the <code class="html">&lt;canvas&gt;</code>, <code class="html">&lt;img&gt;</code> or <code class="html">&lt;video&gt;</code> pixels manually, tracking.js provides an utility which handles that for you:
         </p>
         {literal}
         <pre><code class="javascript">var trackerTask = tracking.track('#myVideo', myTracker);</code></pre>
         {/literal}
 
         <p>
-          It's also possible to plug the tracker instance in other elements. When tracking a <code>&lt;canvas&gt;</code> or <code>&lt;img&gt;</code>, the utility <code>tracking.track('#image', myTracker)</code> invokes only one time <code>myTracker.track(pixels, width, height)</code>. All the required arguments are fulfilled automatically, e.g. array of pixels, width and height. When using with a <code>&lt;video&gt;</code> node it is a little bit different, for each video frame the internal track implementation is executed.
+          It's also possible to plug the tracker instance in other elements. When tracking a <code class="html">&lt;canvas&gt;</code> or <code class="html">&lt;img&gt;</code>, the utility <code class="javascript">tracking.track('#image', myTracker)</code> invokes only one time <code class="javascript">myTracker.track(pixels, width, height)</code>. All the required arguments are fulfilled automatically, e.g. array of pixels, width and height. When using with a <code class="html">&lt;video&gt;</code> node it is a little bit different, for each video frame the internal track implementation is executed.
         </p>
 
         <p>
@@ -262,11 +262,11 @@ trackerTask.run(); // Runs it again anytime
         </p>
 
         <p>
-          It's simple! First, you just need to create a constructor for your new tracker (let's call it <code>MyTracker</code>) and have it inherit from <code>tracking.Tracker</code>:
+          It's simple! First, you just need to create a constructor for your new tracker (let's call it <code class="javascript">MyTracker</code>) and have it inherit from <code class="javascript">tracking.Tracker</code>:
         </p>
 
         {literal}
-        <pre><code class="html">var MyTracker = function() {
+        <pre><code class="javascript">var MyTracker = function() {
   MyTracker(this, 'constructor');
 }
 tracking.inherits(MyTracker, tracking.Tracker);
