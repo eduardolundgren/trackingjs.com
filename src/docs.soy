@@ -532,18 +532,119 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
       </div>
 
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          Many of the existing computer vision frameworks are not available on the web, in addition, they are too complex to learn and to use. The main goal of tracking.js is to provide those complex techniques in a simple and intuitive way on the web. We believe computer vision is important to improve people's life, bringing it to the web will make this future a reality a lot faster.
+        </p>
+
+        <p>
+          We also believe that <a href="http://webcomponents.org" target="_blank">Web Components</a> are the future of encapsulation on the web, therefore tracking.js library features are available for you as custom elements on the <a href="https://github.com/eduardolundgren/tracking-elements" target="_blank">tracking-elements</a> repository.
+        </p>
+
+        <p>
+          Can you imagine tag your friends face in a picture with one line of HTML? Or, to track an user face with the same API? This section will show how you can do that. This will require <a href="http://bower.io" target="_blank">Bower</a> — a front end package manager. Once you have bower installed, install tracking-elements:
+        </p>
+
+        {literal}
+        <pre><code class="sh">$ bower install tracking-elements --save</code></pre>
+        {/literal}
+
+        <p>After install tracking-elements few custom elements are available. They extends the native <code class="html">&lt;canvas&gt;</code>, <code class="html">&lt;img&gt;</code> and <code class="html">&lt;video&gt;</code> with tracking functionality.</p>
+
         <p class="content-subinfo"></p>
 
         <h2 class="content-subhead">Color Element</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <pre><code class="html">&lt;color-tracking&gt;&lt;/color-tracking&gt;</code></pre>
-        <p class="content-subinfo"></p>
 
-        <h2 class="content-subhead">Face Element</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <pre><code class="html">&lt;face-tracking&gt;&lt;/face-tracking&gt;</code></pre>
-        <p class="content-subinfo"></p>
+        <p>
+          As a first step of using tracking.js web components you need to learn how to extends a native DOM element with tracking functionality using the attribute <code class="html">is=""</code>. The tracking target is set through <code class="html">target=""</code> attribute and accepts different values depending on the tracker you are using, e.g. colors or objects.
+        </p>
+
+        <pre><code class="html">&lt;img is="image-color-tracking" target="magenta cyan yellow" /&gt;{\n}
+&lt;canvas is="canvas-color-tracking" target="magenta cyan yellow"&gt;&lt;/canvas&gt;{\n}
+&lt;video is="video-color-tracking" target="magenta cyan yellow"&gt;&lt;/video&gt;</code></pre>
+
+        <p>
+          Elements extending <code class="html">&lt;video&gt;</code> could request the user's camera using the attribute <code class="html">camera="true"</code>. Note that passing that the browser will request the user to allow their camera to be shared. The custom elements exposes events and methods from <code class="javascript">Tracker</code>, for more information go to <a href="http://trackingjs.com/api/" target="_blank">the API docs</a>. The next example will cover an example how to tag friends faces on a picture using <code>ObjectTracker</code>.
+        </p>
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="https://github.com/eduardolundgren/tracking-elements#color-tracker" target="_blank">API docs</a>{sp}
+          <a class="pure-button pure-button-primary" href="http://eduardolundgren.github.io/tracking-elements/examples/color.html">Live demo &gt;</a>
+        </p>
+
+        <h2 class="content-subhead">Object Element</h2>
+
+        <p>
+          Let's create an example that you can place an image with your friends faces and mark with a rectangle each of them. In this step, you'll create an example file under the <code>examples/</code> folder into where you unziped the project under your local drive. Go to this directory and create a file called <code>tracking_element.html</code> file in your favorite editor. The starting file looks like this:
+        </p>
+
+        {literal}
+        <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- Importing Web Component's Polyfill --&gt;
+  &lt;script src="../bower_components/platform/platform.js"&gt;&lt;/script&gt;
+  &lt;!-- Importing Custom Elements --&gt;
+  &lt;link rel="import" href="../src/image-object-tracking.html"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Using Custom Elements --&gt;
+  &lt;img is="image-object-tracking" target="face" src="assets/faces.png" /&gt;
+  &lt;script&gt;
+    // Plots rectangles here.
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        {/literal}
+
+        <p>
+          The next step will teach you how to plot rectangles on your friends faces, you can listen for <code>track</code> events direct from your DOM element, e.g. <code class="javascript">img.addEventListener('track', doSomething)</code>. The event fires when all faces are found on the image. The event payload (<code>event.data</code>) is an array of objects containing all the faces coordinates. Now just pass them to the helper function <code class="javascript">plotRectangles</code> to plot each face.
+        </p>
+
+        {literal}
+        <pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- Importing Web Component's Polyfill --&gt;
+  &lt;script src="../bower_components/platform/platform.js"&gt;&lt;/script&gt;
+  &lt;!-- Importing Custom Elements --&gt;
+  &lt;link rel="import" href="../src/image-object-tracking.html"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Using Custom Elements --&gt;
+  &lt;img is="image-object-tracking" target="face" src="assets/faces.png" /&gt;
+  &lt;script&gt;
+    var img = document.querySelector('img');
+
+    // Fires when faces are found on the image.
+    img.addEventListener('track', function(event) {
+      event.detail.data.forEach(function(rect) {
+        plotRectangle(img, rect);
+      });
+    });
+
+    function plotRectangle(el, rect) {
+      var div = document.createElement('div');
+      div.style.position = 'absolute';
+      div.style.border = '2px solid ' + (rect.color || 'magenta');
+      div.style.width = rect.width + 'px';
+      div.style.height = rect.height + 'px';
+      div.style.left = el.offsetLeft + rect.x + 'px';
+      div.style.top = el.offsetTop + rect.y + 'px';
+      document.body.appendChild(div);
+      return div;
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        {/literal}
+
+        <p class="content-subinfo">
+          <a class="pure-button" href="https://github.com/eduardolundgren/tracking-elements#object-tracker" target="_blank">API docs</a>{sp}
+          <a class="pure-button pure-button-primary" href="http://eduardolundgren.github.io/tracking-elements/examples/object.html">Live demo &gt;</a>
+        </p>
+
       </div>
     </div>
     <script src="http://cdn.alloyui.com/3.0.0pr2/aui/aui-min.js"></script>
