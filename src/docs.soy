@@ -19,8 +19,88 @@
       </div>
 
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto, atque!</p>
+        <p>
+          This project will introduce you to most of the key concepts in working with tracking.js. Don't worry if you don't understand everything. Each of the concepts presented here is described in detail in the <a href="https://github.com/eduardolundgren/tracking.js/tree/master/examples" target="_blank">source code of the examples</a>.
+        </p>
+
+        <div class="header">
+          <h2>Before you start: getting the project</h2>
+        </div>
+
+        <p>
+          To get started, <a href="https://github.com/eduardolundgren/tracking.js/archive/master.zip">download the project</a>. This project includes all of the tracking.js examples, source code dependencies you'll need to get started.
+        </p>
+
+        <p>
+          Unzip the project somewhere on your local drive.
+          The package includes an initial version of the project you'll be working with. While you're working, you'll need a basic HTTP server to serve your pages.
+          Test out the web server by loading the finished version of the project. For example: <a href="http://localhost:8000/tracking.js/" target="_blank">http://localhost:8000/tracking.js/</a>
+        </p>
+
+        <div class="header">
+          <h2>Step 1: Creating an example file</h2>
+        </div>
+
+        <p>In this step, you'll create an example file under the <code>examples/</code> folder into where you unziped the project under your local drive. Go to this directory and create a file called <code>first_tracking.html</code> file in your favorite editor. The starting file looks like this:</p>
+
+        {literal}
+        <pre><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;tracking.js - first tracking&lt;/title&gt;
+  &lt;script src="../build/tracking-min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script&gt;
+  // Start tracking here...
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        {/literal}
+
+        <div class="header">
+          <h2>Step 2: Choose what you want to play with</h2>
+        </div>
+
+        <p>
+          Now that you have <code>first_tracking.html</code> example file created, it's time to choose what technique you want to see in action. There are several examples available on this page, the first one, the <a href="#trackers">Tracker</a>, is just an abstract class to base of the other tracking techniques and cannot be instantiated. One good option to start with is the <a href="#trackers">ColorTracker</a>, copy the snippets available on this section and paste into your example file, in the end it should look something like:
+        </p>
+
+        {literal}
+        <pre><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;tracking.js - first tracking&lt;/title&gt;
+  &lt;script src="../build/tracking-min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;video id="myVideo" width="400" height="300" preload autoplay loop muted&gt;&lt;/video&gt;
+  &lt;script&gt;
+  var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+
+  colors.on('track', function(event) {
+    if (event.data.length === 0) {
+      // No colors were detected in this frame.
+    } else {
+      event.data.forEach(function(rect) {
+        console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+      });
+    }
+  });
+
+  tracking.track('#myVideo', colors);
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        {/literal}
+
+        <p>
+          This example will request your camera and track magenta, cyan and yellow colors that appear in front of it. Look around you and grab any object that matches with one of those colors and watch the console of your browser, it should display the coordinates of all found objects.
+        </p>
       </div>
 
       <div class="header">
