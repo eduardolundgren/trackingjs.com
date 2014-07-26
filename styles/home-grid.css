@@ -130,7 +130,7 @@ figure.effect h2 {
 }
 
 figure.effect p {
-  padding: 20px 2.5em;
+  padding: 20px 2.7em;
   -webkit-transition: opacity .35s, -webkit-transform .35s;
   transition: opacity .35s, transform .35s;
   -webkit-transform: translate3d(0, 20px, 0);

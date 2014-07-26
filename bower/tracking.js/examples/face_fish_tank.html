@@ -13,52 +13,37 @@
 
   <style>
   body {
-    background:#777;
-    padding:0;
-    margin:0;
-    font-weight: bold;
-    overflow:hidden;
+    overflow: hidden;
   }
 
-  #info {
+  #video, #canvas {
+    bottom: 0;
     position: absolute;
-    top: 0px; width: 100%;
-    color: #ffffff;
-    padding: 5px;
-    font-family:Monospace;
-    font-size:13px;
-    text-align:center;
-    z-index:1000;
-  }
-
-  #video {
-    position: absolute;
+    z-index: 100;
   }
 
   #viewport {
     padding-top: 40px;
   }
-
-  a {
-    color: #ffffff;
-  }
-
-  #oldie a { color:#da0 }
   </style>
 </head>
 
 <body>
   <div class="demo-title">
-    <p><a href="http://trackingjs.com">tracking.js</a> － get user's webcam and detect faces to control virtual camera</p>
+    <p><a href="http://trackingjs.com">tracking.js</a> － get user's webcam and detect faces to control the scene</p>
   </div>
 
   <div id="viewport">
     <video id="video" width="320" height="240" preload autoplay loop muted></video>
+    <canvas id="canvas" width="320" height="240"></canvas>
   </div>
 
   <script>
     var viewport = document.getElementById('viewport');
-    fishTankRenderer = new FishTankRenderer();
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+    var fishTankRenderer = new FishTankRenderer();
     fishTankRenderer.init(viewport);
 
     var faceX = 0;
@@ -79,6 +64,14 @@
           maxRectArea = rect.width * rect.height;
           maxRect = rect;
         }
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.strokeStyle = 'magenta';
+        context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+        context.font = '11px Helvetica';
+        context.fillStyle = "#fff";
+        context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+        context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
       });
 
       if(maxRectArea > 0) {

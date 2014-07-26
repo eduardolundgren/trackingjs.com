@@ -20,52 +20,123 @@
 <body>
     <div id="layout"><a href="#menu" id="menuLink" class="menu-link"><span></span></a>
         <div id="menu">
-            <div class="pure-menu pure-menu-open"><a class="pure-menu-heading" href="./index.html">tracking.js</a>
+            <div class="pure-menu pure-menu-open" id="docs"><a class="pure-menu-heading home-menu-selected index" href="./">tracking.js</a>
                 <ul>
                     <li class="main-item">Docs</li>
-                    <li><a href="./docs.html">Introduction</a>
+                    <li class="pure-menu-selected docs"><a href="./docs.html#introduction">Introduction</a>
                     </li>
-                    <li><a href="./docs.html#trackers">Trackers</a>
+                    <li class="docs"><a href="./docs.html#trackers">Trackers</a>
                     </li>
-                    <li><a href="./docs.html#utilities">Utilities</a>
+                    <li class="docs"><a href="./docs.html#utilities">Utilities</a>
                     </li>
-                    <li><a href="./docs.html#web-components">Web Components</a>
+                    <li class="docs"><a href="./docs.html#web-components">Web Components</a>
                     </li>
                     <li class="main-item">Examples</li>
-                    <li><a href="./examples/brief.html">Brief</a>
+                    <li class="pure-menu-selected face_tag_friends"><a href="./examples/face_tag_friends.html">Tag Friends</a>
                     </li>
-                    <li><a href="./examples/brief_camera.html">Brief Camera</a>
+                    <li class="pure-menu-selected face_fish_tank"><a href="./examples/face_fish_tank.html">Iron Spheres</a>
                     </li>
-                    <li><a href="./examples/color_camera.html">Color Camera</a>
+                    <li class="pure-menu-selected color_hexgl"><a href="./examples/color_hexgl.html">Racing Car</a>
                     </li>
-                    <li><a href="./examples/color_three.html">Color Three.js</a>
+                    <li class="pure-menu-selected color_draw_something"><a href="./examples/color_draw_something.html">Draw Something</a>
                     </li>
-                    <li><a href="./examples/color_video.html">Color Video</a>
+                    <li class="pure-menu-selected color_fish_tank"><a href="./examples/color_fish_tank.html">Random Particles</a>
                     </li>
-                    <li><a href="./examples/face_camera.html">Face Camera</a>
+                    <li class="pure-menu-selected menu-item-divided face_hello_world"><a href="./examples/face_hello_world.html">Face (Image)</a>
                     </li>
-                    <li><a href="./examples/face_tag_friends.html">Face Tag Friends</a>
+                    <li class="pure-menu-selected face_camera"><a href="./examples/face_camera.html">Face (Camera)</a>
                     </li>
-                    <li><a href="./examples/fast.html">Fast</a>
+                    <li class="pure-menu-selected color_hello_world"><a href="./examples/color_hello_world.html">Color (Image)</a>
+                    </li>
+                    <li class="pure-menu-selected color_camera"><a href="./examples/color_camera.html">Color (Camera)</a>
+                    </li>
+                    <li class="pure-menu-selected color_video"><a href="./examples/color_video.html">Color (Video)</a>
+                    </li>
+                    <li class="pure-menu-selected menu-item-divided fast"><a href="./examples/fast.html">Feature Detection</a>
+                    </li>
+                    <li class="pure-menu-selected fast_camera"><a href="./examples/fast_camera.html">Fast (Camera)</a>
+                    </li>
+                    <li class="pure-menu-selected brief"><a href="./examples/brief.html">Feature Descriptor</a>
+                    </li>
+                    <li class="pure-menu-selected brief_camera"><a href="./examples/brief_camera.html">Brief (Camera)</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div id="main">
-            <div class="header">
+            <div class="header" id="introduction">
                 <h1>tracking.js</h1>
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto,
-                    atque!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto,
-                    atque!</p>
+                <p>This documentation will introduce you to most of the key concepts in working with tracking.js. Don't worry if you don't understand everything. Each of the concepts presented here is described in detail in the <a href="https://github.com/eduardolundgren/tracking.js/tree/master/examples" target="_blank">source code of the examples</a>.</p>
+                <div class="header">
+                    <h2>Before you start: getting the project</h2>
+                </div>
+                <p>To get started, <a href="https://github.com/eduardolundgren/tracking.js/archive/master.zip">download the project</a>. This project includes all of the tracking.js examples, source code dependencies you'll need to get started.</p>
+                <p>Unzip the project somewhere on your local drive. The package includes an initial version of the project you'll be working with. While you're working, you'll need a basic HTTP server to serve your pages. Test out the web server by loading
+                    the finished version of the project. For example: <a href="http://localhost:8000/tracking.js/" target="_blank">http://localhost:8000/tracking.js/</a>
+                </p>
+                <div class="header">
+                    <h2>Step 1: Creating an example file</h2>
+                </div>
+                <p>In this step, you'll create an example file under the <code>examples/</code> folder into where you unziped the project under your local drive. Go to this directory and create a file called <code>first_tracking<span class="hljs-preprocessor">.html</span></code> file in your favorite
+                    editor. The starting file looks like this:</p>
+                <pre><code class="html"><span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>tracking.js - first tracking<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"../build/tracking-min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-comment">// Start tracking here...</span>
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+                <div class="header">
+                    <h2>Step 2: Choose what you want to play with</h2>
+                </div>
+                <p>Now that you have <code>first_tracking<span class="hljs-preprocessor">.html</span></code> example file created, it's time to choose what technique you want to see in action. There are several examples available on this page, the first one, the <a href="#trackers">Tracker</a>,
+                    is just an abstract class to base of the other tracking techniques and cannot be instantiated. One good option to start with is the <a href="#trackers">ColorTracker</a>, copy the snippets available on this section and paste into your
+                    example file, in the end it should look something like:</p>
+                <pre><code class="html"><span class="hljs-doctype">&lt;!doctype html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>tracking.js - first tracking<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"../build/tracking-min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"myVideo"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"400"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300"</span> <span class="hljs-attribute">preload</span> <span class="hljs-attribute">autoplay</span> <span class="hljs-attribute">loop</span> <span class="hljs-attribute">muted</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> colors = <span class="hljs-keyword">new</span> tracking.ColorTracker([<span class="hljs-string">'magenta'</span>, <span class="hljs-string">'cyan'</span>, <span class="hljs-string">'yellow'</span>]);
+
+  colors.on(<span class="hljs-string">'track'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+    <span class="hljs-keyword">if</span> (event.data.length === <span class="hljs-number">0</span>) {
+      <span class="hljs-comment">// No colors were detected in this frame.</span>
+    } <span class="hljs-keyword">else</span> {
+      event.data.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(rect)</span> {</span>
+        console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+      });
+    }
+  });
+
+  tracking.track(<span class="hljs-string">'#myVideo'</span>, colors);
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+                <p>This example will request your camera and track magenta, cyan and yellow colors that appear in front of it. Look around you and grab any object that matches with one of those colors and watch the console of your browser, it should display
+                    the coordinates of all found objects.</p>
             </div>
             <div class="header">
                 <h2 id="trackers">Trackers</h2>
             </div>
             <div class="content">
-                <p>In order to understand how the tracker API works, first you need to instantiate the constructor passing the targets you want to detect. Note that <code>tracking<span class="hljs-preprocessor">.Tracker</span></code> is an abstract class only used to teach how to use the API.</p>
+                <p>In order to understand how the tracker API works, first you need to instantiate the constructor passing the targets you want to detect. Note that <code class="javascript">tracking<span class="hljs-preprocessor">.Tracker</span></code> is an abstract class only used to teach how
+                    to use the API.</p>
                 <pre><code class="javascript"><span class="hljs-keyword">var</span> myTracker = <span class="hljs-keyword">new</span> tracking.Tracker(<span class="hljs-string">'target'</span>);</code></pre>
                 <p>Once you have the tracker instance, you need to know when something happens, that's why you need listen for <code><span class="hljs-keyword">track</span></code> events:</p>
                 <pre><code class="javascript">myTracker.on(<span class="hljs-string">'track'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
@@ -77,13 +148,13 @@
     });
   }
 });</code></pre>
-                <p>Now that you have the tracker instance listening for <code><span class="hljs-keyword">track</span></code> event, you are ready to start tracking by invoking the track implementation <code>myTracker<span class="hljs-class">.track</span>(pixels, <span class="hljs-attribute">width</span>, <span class="hljs-attribute">height</span>)</code>. This method handles all the internal
-                    logic that processes the pixels and extracts the targets from it.</p>
-                <p>But don't worry, you don't need to read the <code><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span>&gt;</span></code>, <code><span class="hljs-tag">&lt;<span class="hljs-title">img</span>&gt;</span></code> or <code><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span></code> pixels manually, tracking.js provides an utility which handles that for you:</p>
+                <p>Now that you have the tracker instance listening for <code><span class="hljs-keyword">track</span></code> event, you are ready to start tracking by invoking the track implementation <code class="javascript">myTracker<span class="hljs-class">.track</span>(pixels, <span class="hljs-attribute">width</span>, <span class="hljs-attribute">height</span>)</code>. This method handles
+                    all the internal logic that processes the pixels and extracts the targets from it.</p>
+                <p>But don't worry, you don't need to read the <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span>&gt;</span></code>, <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">img</span>&gt;</span></code> or <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span></code> pixels manually, tracking.js provides an utility which handles that for you:</p>
                 <pre><code class="javascript"><span class="hljs-keyword">var</span> trackerTask = tracking.track(<span class="hljs-string">'#myVideo'</span>, myTracker);</code></pre>
-                <p>It's also possible to plug the tracker instance in other elements. When tracking a <code><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span>&gt;</span></code> or <code><span class="hljs-tag">&lt;<span class="hljs-title">img</span>&gt;</span></code>, the utility <code>tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#image'</span>, myTracker)</code> invokes only one time <code>myTracker<span class="hljs-class">.track</span>(pixels, <span class="hljs-attribute">width</span>, <span class="hljs-attribute">height</span>)</code>.
-                    All the required arguments are fulfilled automatically, e.g. array of pixels, width and height. When using with a <code><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span></code> node it is a little bit different, for each video frame the internal track implementation is
-                    executed.</p>
+                <p>It's also possible to plug the tracker instance in other elements. When tracking a <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span>&gt;</span></code> or <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">img</span>&gt;</span></code>, the utility <code class="javascript">tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#image'</span>, myTracker)</code> invokes
+                    only one time <code class="javascript">myTracker<span class="hljs-class">.track</span>(pixels, <span class="hljs-attribute">width</span>, <span class="hljs-attribute">height</span>)</code>. All the required arguments are fulfilled automatically, e.g. array of pixels, width and height. When using with a <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span></code> node
+                    it is a little bit different, for each video frame the internal track implementation is executed.</p>
                 <p>If you want to have full control of the tracking task you've plugged on the previous example, you may want to continue reading this section. Let's assume you need to stop the tracking from a long-running video:</p>
                 <pre><code class="javascript">trackerTask.stop(); <span class="hljs-comment">// Stops the tracking</span>
 trackerTask.run(); <span class="hljs-comment">// Runs it again anytime</span>
@@ -108,11 +179,23 @@ trackerTask.run(); <span class="hljs-comment">// Runs it again anytime</span>
 });</code></pre>
                 <p>Now that you have the tracker instance listening for <code><span class="hljs-keyword">track</span></code> event, you are ready to start tracking:</p>
                 <pre><code class="javascript">tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#myVideo'</span>, colors);</code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/color_camera.html">Live demo &gt;</a>
+                <p>How do I register my own color? By default tracking.js color tracker provides out of the box three default colors, they are: magenta, cyan and yellow. In addition to those, you can register any custom color you want to track, it's very
+                    simple, let's assume the color you want to track is green. In the RGB color space the green color could be some value close to <code><span class="hljs-attribute">(r, g, b) </span>=<span class="hljs-string"> (0, 255, 0)</span></code>, where <code><span class="hljs-list">(<span class="hljs-title">r</span>, g, b)</span></code> stands for red, green and blue, respectively.
+                    Once you understand the color to track in the RGB color space, it's time to register your color using <code class="javascript">tracking<span class="hljs-preprocessor">.ColorTracker</span><span class="hljs-preprocessor">.registerColor</span></code>.</p>
+                <pre><code class="javascript">tracking.ColorTracker.registerColor(<span class="hljs-string">'green'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(r, g, b)</span> {</span>
+  <span class="hljs-keyword">if</span> (r &lt; <span class="hljs-number">50</span> &amp;&amp; g &gt; <span class="hljs-number">200</span> &amp;&amp; b &lt; <span class="hljs-number">50</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+});</code></pre>
+                <p>Note that the custom color function returns <code><span class="hljs-literal">true</span></code> to any value that the <code>g</code> value is close to 255, to make sure we exclude other colors that could fit with the green RGB pattern, it also checks <code>r</code> and <code>b</code> values
+                    to make sure they are below <code>50</code>, hence close to <code><span class="hljs-attribute">(r, g, b) </span>=<span class="hljs-string"> (0, 255, 0)</span></code>.</p>
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.ColorTracker.html" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/color_hello_world.html">Live demo &gt;</a>
                 </p>
                 <h2 class="content-subhead">Object Tracker</h2>
                 <p>Having a rapid object detection as part of the library resulted in interesting examples for web applications, such as detecting faces, mouths, eyes and any other training data that could be added to the library later.</p>
-                <p>In addition to the tracking.js core script, the training data for the object targets you want to track needs to be included:</p>
+                <p>In addition to the tracking.js core script, there are some training classifiers, they are going to teach tracking.js core how to recognize the object you want to track, make sure to only include the ones you need, each of them have an
+                    average size of ~60 KB:</p>
                 <pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"tracking.js/build/data/face.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"tracking.js/build/data/eye.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"tracking.js/build/data/mouth.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
@@ -131,15 +214,15 @@ trackerTask.run(); <span class="hljs-comment">// Runs it again anytime</span>
 });</code></pre>
                 <p>Now that you have the tracker instance listening for <code><span class="hljs-keyword">track</span></code> event, you are ready to start tracking:</p>
                 <pre><code class="javascript">tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#myVideo'</span>, objects);</code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/face_camera.html">Live demo &gt;</a>
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.ObjectTracker.html" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/face_hello_world.html">Live demo &gt;</a>
                 </p>
                 <h2 class="content-subhead">Custom Tracker</h2>
                 <p>It's easy to create your own tracker whenever you need one.</p>
                 <p>Let's say for example that, for some reason, you need to build an application that finds shadows in images. Our trackers currently don't support this use case yet, so you'll need to implement the algorithm yourself.</p>
                 <p>Don't walk away yet though! You have the option of building your feature on top of tracking.js and, if you do so, you'll be able to take advantage of all the abstractions it provides, like accessing the camera and getting the pixel matrix
                     through the canvas on every frame.</p>
-                <p>It's simple! First, you just need to create a constructor for your new tracker (let's call it <code>MyTracker</code>) and have it inherit from <code>tracking<span class="hljs-preprocessor">.Tracker</span></code>:</p>
-                <pre><code class="html"><span class="hljs-keyword">var</span> MyTracker = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <p>It's simple! First, you just need to create a constructor for your new tracker (let's call it <code class="javascript">MyTracker</code>) and have it inherit from <code class="javascript">tracking<span class="hljs-preprocessor">.Tracker</span></code>:</p>
+                <pre><code class="javascript"><span class="hljs-keyword">var</span> MyTracker = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
   MyTracker(<span class="hljs-keyword">this</span>, <span class="hljs-string">'constructor'</span>);
 }
 tracking.inherits(MyTracker, tracking.Tracker);
@@ -163,7 +246,7 @@ tracking.inherits(MyTracker, tracking.Tracker);
 }</span>);</span></code></pre>
                 <p>And finally, start tracking:</p>
                 <pre><code class="javascript">tracking.<span class="hljs-keyword">track</span>(<span class="hljs-string">'#myVideo'</span>, myTracker);</code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Tracker.html" target="_blank">API docs</a>
                 </p>
             </div>
             <div class="header">
@@ -180,7 +263,7 @@ tracking.inherits(MyTracker, tracking.Tracker);
                     image. Fast is faster than many other well-known feature extraction methods.</p>
                 <p>To find corners, tracking.js provides the following utility:</p>
                 <pre><code class="javascript">var corners = tracking<span class="hljs-preprocessor">.Fast</span><span class="hljs-preprocessor">.findCorners</span>(pixels, width, height)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/fast.html">Live demo &gt;</a>
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Fast.html" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/fast.html">Live demo &gt;</a>
                 </p>
                 <h2 class="content-subhead">Feature Descriptor (Brief)</h2>
                 <p>Provides an implementation of <a href="http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf" target="_blank">Binary Robust Independent Elementary Features</a>. It uses binary strings as an efficient feature point descriptor. As a
@@ -190,7 +273,7 @@ tracking.inherits(MyTracker, tracking.Tracker);
 var descriptors2 = tracking<span class="hljs-preprocessor">.Brief</span><span class="hljs-preprocessor">.getDescriptors</span>(pixels, width, corners2)<span class="hljs-comment">;</span></code></pre>
                 <p>Brief also provides a method that you can match the features decribed in <code>descriptors1</code> and <code>descriptors2</code>:</p>
                 <pre><code class="javascript">var matches = tracking<span class="hljs-preprocessor">.Brief</span><span class="hljs-preprocessor">.reciprocalMatch</span>(corners1, descriptors1, corners2, descriptors2)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/brief_camera.html">Live demo &gt;</a>
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Brief.html" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="./examples/brief.html">Live demo &gt;</a>
                 </p>
                 <h2 class="content-subhead">Convolution</h2>
                 <p>Convolution filters are very useful generic filters for image processing. The basic idea is that you take the weighed sum of a rectangle of pixels from the source image and use that as the output value. Convolution filters can be used
@@ -201,21 +284,21 @@ var descriptors2 = tracking<span class="hljs-preprocessor">.Brief</span><span cl
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.Image</span><span class="hljs-preprocessor">.verticalConvolve</span>(pixels, width, height, weightsVector, opaque)<span class="hljs-comment">;</span></code></pre>
                 <p>Or, if you need to do a separable convolve:</p>
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.Image</span><span class="hljs-preprocessor">.separableConvolve</span>(pixels, width, height, horizWeights, vertWeights, opaque)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#horizontalConvolve" target="_blank">API docs</a>
                 </p>
                 <h2 class="content-subhead">Gray Scale</h2>
                 <p>Converts a color from a colorspace based on an RGB color model to a grayscale representation of its luminance. The coefficients represent the measured intensity perception of typical trichromat humans, in particular, human vision is most
                     sensitive to green and least sensitive to blue.</p>
                 <p>To convert the images pixels into grayscale:</p>
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.Image</span><span class="hljs-preprocessor">.grayscale</span>(pixels, width, height, fillRGBA)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#grayscale" target="_blank">API docs</a>
                 </p>
                 <h2 class="content-subhead">Image Blur</h2>
                 <p>A Gaussian blur (also known as Gaussian smoothing) is the result of blurring an image by a Gaussian function. It is a widely used effect in graphics software, typically to reduce image noise and reduce detail. Gaussian smoothing is also
                     used as a pre-processing stage in computer vision algorithms in order to enhance image structures at different scales.</p>
                 <p>To blur the images pixels using tracking.js you can do:</p>
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.Image</span><span class="hljs-preprocessor">.blur</span>(pixels, width, height, diameter)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#blur" target="_blank">API docs</a>
                 </p>
                 <h2 class="content-subhead">Integral Image</h2>
                 <p>A summed area table is a data structure and algorithm for quickly and efficiently generating the sum of values in a rectangular subset of a grid. In the image processing domain, it is also known as an integral image.</p>
@@ -223,44 +306,135 @@ var descriptors2 = tracking<span class="hljs-preprocessor">.Brief</span><span cl
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.Image</span><span class="hljs-preprocessor">.computeIntegralImage</span>(
     pixels, width, height, opt_integralImage, opt_integralImageSquare,
     opt_tiltedIntegralImage, opt_integralImageSobel)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#computeIntegralImage" target="_blank">API docs</a>
                 </p>
                 <h2 class="content-subhead">Sobel</h2>
                 <p>Computes the vertical and horizontal gradients of the image and combines the computed images to find edges in the image. The way we implement the Sobel filter here is by first grayscaling the image, then taking the horizontal and vertical
                     gradients and finally combining the gradient images to make up the final image.</p>
                 <p>To compute the edges of the image pixels using tracking.js you can do:</p>
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.Image</span><span class="hljs-preprocessor">.sobel</span>(pixels, width, height)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#sobel" target="_blank">API docs</a>
                 </p>
                 <h2 class="content-subhead">Viola Jones</h2>
                 <p>The <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola–Jones</a> object detection framework is the first object detection framework to provide competitive object detection rates in
                     real-time. This techinique is used inside <code>tracking<span class="hljs-preprocessor">.ObjectTracker</span></code> implementation.</p>
                 <p>To use Viola Jones to detect an object of an image pixels using tracking.js you can do:</p>
                 <pre><code class="javascript">tracking<span class="hljs-preprocessor">.ViolaJones</span><span class="hljs-preprocessor">.detect</span>(pixels, width, height, initialScale, scaleFactor, stepSize, edgesDensity, classifier)<span class="hljs-comment">;</span></code></pre>
-                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/" target="_blank">API docs</a> 
+                <p class="content-subinfo"><a class="pure-button" href="http://trackingjs.com/api/tracking.ViolaJones.html" target="_blank">API docs</a>
                 </p>
             </div>
             <div class="header">
                 <h2 id="web-components">Web Components</h2>
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto,
-                    atque!</p>
+                <p>Many of the existing computer vision frameworks are not available on the web, in addition, they are too complex to learn and to use. The main goal of tracking.js is to provide those complex techniques in a simple and intuitive way on the
+                    web. We believe computer vision is important to improve people's life, bringing it to the web will make this future a reality a lot faster.</p>
+                <p>We also believe that <a href="http://webcomponents.org" target="_blank">Web Components</a> are the future of encapsulation on the web, therefore tracking.js library features are available for you as custom elements on the <a href="https://github.com/eduardolundgren/tracking-elements" target="_blank">tracking-elements</a> repository.</p>
+                <p>Can you imagine tag your friends face in a picture with one line of HTML? Or, to track an user face with the same API? This section will show how you can do that. This will require <a href="http://bower.io" target="_blank">Bower</a> — a
+                    front end package manager. Once you have bower installed, install tracking-elements:</p>
+                <pre><code class="sh"><span class="hljs-comment">$</span> <span class="hljs-comment">bower</span> <span class="hljs-comment">install</span> <span class="hljs-comment">tracking</span><span class="hljs-literal">-</span><span class="hljs-comment">elements</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">save</span></code></pre>
+                <p>After install tracking-elements few custom elements are available. They extends the native <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">canvas</span>&gt;</span></code>, <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">img</span>&gt;</span></code> and <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span></code> with tracking functionality.</p>
                 <p class="content-subinfo"></p>
-                <h2 class="content-subhead">Color Element</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto,
-                    atque!</p><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">color-tracking</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">color-tracking</span>&gt;</span></code></pre>
-                <p class="content-subinfo"></p>
-                <h2 class="content-subhead">Face Element</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos distinctio dolores eligendi illo nostrum sunt blanditiis facilis itaque, voluptatum animi laborum consequuntur! Dignissimos cumque, quod unde molestiae! Voluptatibus iusto,
-                    atque!</p><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">face-tracking</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">face-tracking</span>&gt;</span></code></pre>
-                <p class="content-subinfo"></p>
+                    <h2 class="content-subhead">Color Element</h2>
+                    <p>As a first step of using tracking.js web components you need to learn how to extends a native DOM element with tracking functionality using the attribute <code class="html"><span class="hljs-keyword">is</span>=<span class="hljs-string">""</span></code>. The tracking target is set through <code class="html"><span class="hljs-setting">target=<span class="hljs-value"><span class="hljs-string">""</span></span></span></code> attribute
+                        and accepts different values depending on the tracker you are using, e.g. colors or objects.</p><pre><code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"image-color-tracking"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"magenta cyan yellow"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">canvas</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"canvas-color-tracking"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"magenta cyan yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"video-color-tracking"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"magenta cyan yellow"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
+                    <p>Elements extending <code class="html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span></code> could request the user's camera using the attribute <code class="html"><span class="hljs-setting">camera=<span class="hljs-value"><span class="hljs-string">"true"</span></span></span></code>. Note that passing that the browser will request the user to allow their camera to
+                        be shared. The custom elements exposes events and methods from <code class="javascript">Tracker</code>, for more information go to <a href="http://trackingjs.com/api/" target="_blank">the API docs</a>. The next example will cover
+                        an example how to tag friends faces on a picture using <code>ObjectTracker</code>.</p>
+                    <p class="content-subinfo"><a class="pure-button" href="https://github.com/eduardolundgren/tracking-elements#color-tracker" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="http://eduardolundgren.github.io/tracking-elements/examples/color.html">Live demo &gt;</a>
+                    </p>
+                    <h2 class="content-subhead">Object Element</h2>
+                    <p>Let's create an example that you can place an image with your friends faces and mark with a rectangle each of them. In this step, you'll create an example file under the <code>examples/</code> folder into where you unziped the project
+                        under your local drive. Go to this directory and create a file called <code>tracking_element<span class="hljs-preprocessor">.html</span></code> file in your favorite editor. The starting file looks like this:</p>
+                    <pre><code class="html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Importing Web Component's Polyfill --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"bower/platform/platform.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Importing Custom Elements --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"import"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"../src/image-object-tracking.html"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Using Custom Elements --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"image-object-tracking"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"face"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"assets/faces.png"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">// Plots rectangles here.</span>
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+                    <p>The next step will teach you how to plot rectangles on your friends faces, you can listen for <code><span class="hljs-keyword">track</span></code> events direct from your DOM element, e.g. <code class="javascript">img.addEventListener(<span class="hljs-string">'track'</span>, <span class="hljs-keyword">do</span>Something)</code>. The
+                        event fires when all faces are found on the image. The event payload (<code><span class="hljs-title">event</span>.<span class="hljs-typedef"><span class="hljs-keyword">data</span></span></code>) is an array of objects containing all the faces coordinates. Now just pass them to the helper function <code class="javascript">plotRectangles</code> to
+                        plot each face.</p>
+                    <pre><code class="html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Importing Web Component's Polyfill --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"bower/platform/platform.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Importing Custom Elements --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"import"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"../src/image-object-tracking.html"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Using Custom Elements --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"image-object-tracking"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"face"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"assets/faces.png"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> img = document.querySelector(<span class="hljs-string">'img'</span>);
+
+    <span class="hljs-comment">// Fires when faces are found on the image.</span>
+    img.addEventListener(<span class="hljs-string">'track'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event)</span> {</span>
+      event.detail.data.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(rect)</span> {</span>
+        plotRectangle(img, rect);
+      });
+    });
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">plotRectangle</span><span class="hljs-params">(el, rect)</span> {</span>
+      <span class="hljs-keyword">var</span> div = document.createElement(<span class="hljs-string">'div'</span>);
+      div.style.position = <span class="hljs-string">'absolute'</span>;
+      div.style.border = <span class="hljs-string">'2px solid '</span> + (rect.color || <span class="hljs-string">'magenta'</span>);
+      div.style.width = rect.width + <span class="hljs-string">'px'</span>;
+      div.style.height = rect.height + <span class="hljs-string">'px'</span>;
+      div.style.left = el.offsetLeft + rect.x + <span class="hljs-string">'px'</span>;
+      div.style.top = el.offsetTop + rect.y + <span class="hljs-string">'px'</span>;
+      document.body.appendChild(div);
+      <span class="hljs-keyword">return</span> div;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+                    <p class="content-subinfo"><a class="pure-button" href="https://github.com/eduardolundgren/tracking-elements#object-tracker" target="_blank">API docs</a>  <a class="pure-button pure-button-primary" href="http://eduardolundgren.github.io/tracking-elements/examples/object.html">Live demo &gt;</a>
+                    </p>
             </div>
         </div>
+        <script src="http://cdn.alloyui.com/3.0.0pr2/aui/aui-min.js"></script>
+        <script>
+            YUI().use('aui-scrollspy', function(Y) {
+                new Y.Scrollspy({
+                    activeClass: 'pure-menu-selected',
+                    target: '#menu'
+                });
+            });
+        </script>
     </div>
     <!-- build:js ./scripts/all.min.js -->
     <script src="./scripts/side-menu.js"></script>
     <!-- endbuild -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-8055185-3']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </body>
 
 </html>

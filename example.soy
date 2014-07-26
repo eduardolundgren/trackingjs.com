@@ -1,0 +1,10 @@
+{namespace example} /** * @param baseDir * @param url * @param sourceUrl * @param cssScope */ {template .page} {call main.page} {param baseDir: $baseDir /} {param content}
+<link rel="stylesheet" href="{$baseDir}styles/example.css">{call menu.side} {param baseDir: $baseDir /} {param cssScope: $cssScope /} {/call}
+
+<div id="main">
+    <div class="iframe-container">
+        <iframe src="{$url}"></iframe>
+        <a href="{$sourceUrl}" class="view-source" target="_blank">View source</a>
+    </div>
+</div>
+{/param} {/call} {/template}

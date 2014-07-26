@@ -12,10 +12,17 @@
 
   <style>
   .rect {
-    border: 2px solid magenta;
+    border: 2px solid #a64ceb;
     left: -1000px;
     position: absolute;
     top: -1000px;
+  }
+
+  #img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -173px 0 0 -300px;
   }
   </style>
 </head>
@@ -35,7 +42,7 @@
       var img = document.getElementById('img');
 
       var tracker = new tracking.ObjectTracker(['face', 'eye', 'mouth']);
-      tracker.setStepSize(2);
+      tracker.setStepSize(1.7);
 
       tracking.track('#img', tracker);
 

@@ -19,15 +19,15 @@ body {
 
 #layout.active {
   position: relative;
-  left: 170px;
+  left: 185px;
 }
 #layout.active #menu {
-  left: 170px;
-  width: 170px;
+  left: 185px;
+  width: 185px;
 }
 
 #layout.active .menu-link {
-  left: 170px;
+  left: 185px;
 }
 
 .content {
@@ -66,8 +66,8 @@ body {
   bottom: 0;
   left: 0;
   overflow-y: auto;
-  width: 170px;
-  margin-left: -170px;
+  width: 185px;
+  margin-left: -185px;
   background: #222326;
   -webkit-overflow-scrolling: touch;
 }
@@ -100,16 +100,6 @@ body {
 
 #menu .pure-menu li a:hover,
 #menu .pure-menu li a:focus {
-  background: #2e2f33;
-}
-
-#menu .pure-menu-selected a {
-  color: #fff;
-}
-
-#menu .pure-menu li.pure-menu-selected a {
-  color: #fff;
-  border-left: 3px solid #a64ceb;
   background: #2e2f33;
 }
 
@@ -178,8 +168,7 @@ body {
 }
 
 #menu .pure-menu-heading:hover,
-#menu .pure-menu-heading:focus,
-#menu .pure-menu-heading.home-menu-selected {
+#menu .pure-menu-heading:focus {
   background: #9f3fcf;
 }
 
@@ -192,21 +181,44 @@ body {
 
   #layout {
     left: 0;
-    padding-left: 170px;
+    padding-left: 185px;
   }
 
   #menu {
-    left: 170px;
+    left: 185px;
   }
 
   .menu-link {
     position: fixed;
-    left: 170px;
+    left: 185px;
     display: none;
   }
 
   #layout.active .menu-link {
-    left: 170px;
+    left: 185px;
   }
 }
 
+#index .index.home-menu-selected {
+  background: #9f3fcf;
+}
+
+#docs .docs.pure-menu-selected a,
+#face_tag_friends .face_tag_friends.pure-menu-selected a,
+#face_fish_tank .face_fish_tank.pure-menu-selected a,
+#color_hexgl .color_hexgl.pure-menu-selected a,
+#color_draw_something .color_draw_something.pure-menu-selected a,
+#color_fish_tank .color_fish_tank.pure-menu-selected a,
+#face_hello_world .face_hello_world.pure-menu-selected a,
+#face_camera .face_camera.pure-menu-selected a,
+#color_hello_world .color_hello_world.pure-menu-selected a,
+#color_camera .color_camera.pure-menu-selected a,
+#color_video .color_video.pure-menu-selected a,
+#fast .fast.pure-menu-selected a,
+#fast_camera .fast_camera.pure-menu-selected a,
+#brief .brief.pure-menu-selected a,
+#brief_camera .brief_camera.pure-menu-selected a {
+  color: #fff;
+  border-left: 3px solid #a64ceb;
+  background: #2e2f33;
+}

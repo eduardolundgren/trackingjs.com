@@ -61,3 +61,17 @@ a.pure-button-primary,
 a.pure-button-selected {
   background: #a64ceb;
 }
+
+.btn-download-container {
+  text-align: center;
+}
+
+.btn-download {
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.btn-download-icon {
+  vertical-align: bottom;
+  padding-right: 15px;
+}
