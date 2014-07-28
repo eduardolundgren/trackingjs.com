@@ -8,8 +8,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="author" content="Eduardo Lundgren">
         <meta name="description" content="A modern approach for Computer Vision on the web.">
+        <meta property="og:title" content="tracking.js">
+        <meta property="og:description" content="A modern approach for Computer Vision on the web">
+        <meta property="og:image" content="http://trackingjs.com/images/app/site_screenshot.jpg">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>tracking.js</title>
+        <title>tracking.js' + ((opt_data.pageName) ? ' | ' + soy.$$escapeHtml(opt_data.pageName) : '') + '</title>
         <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100|Ubuntu" rel="stylesheet" type="text/css">
         <!-- build:css ' + soy.$$escapeHtml(opt_data.baseDir) + 'styles/all.min.css -->
         <link rel="stylesheet" href="' + soy.$$escapeHtml(opt_data.baseDir) + '../bower_components/pure/pure-min.css">

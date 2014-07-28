@@ -1,4 +1,4 @@
-{namespace main} /** * @param content * @param baseDir */ {template .page}
+{namespace main} /** * @param content * @param baseDir * @param? pageName */ {template .page}
 <!doctype html>
 <html lang="en">
 
@@ -8,9 +8,14 @@
 
     <meta name="author" content="Eduardo Lundgren">
     <meta name="description" content="A modern approach for Computer Vision on the web.">
+
+    <meta property="og:title" content="tracking.js">
+    <meta property="og:description" content="A modern approach for Computer Vision on the web">
+    <meta property="og:image" content="http://trackingjs.com/images/app/site_screenshot.jpg">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>tracking.js</title>
+    <title>tracking.js{if $pageName} | {$pageName}{/if}</title>
 
     <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100|Ubuntu" rel="stylesheet" type="text/css">
 

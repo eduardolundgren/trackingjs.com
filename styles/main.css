@@ -1,3 +1,7 @@
+html, body, #layout, #main {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto Slab', serif;
 }
@@ -74,4 +78,65 @@ a.pure-button-selected {
 .btn-download-icon {
   vertical-align: bottom;
   padding-right: 15px;
+}
+
+.credits {
+  min-height: 70px;
+  background-color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.credits .love {
+  color: #9f3fcf;
+  display: inline-block;
+  font-size: 1.4em;
+  position: relative;
+  -webkit-transform: scale(.9);
+  -moz-transform: scale(.9);
+  transform: scale(.9);
+  -webkit-animation: love .5s infinite linear alternate-reverse;
+  -moz-animation: love .5s infinite linear alternate-reverse;
+  animation: love .5s infinite linear alternate-reverse;
+}
+
+@-webkit-keyframes love {
+  to {
+    -webkit-transform: scale(1.2)
+  }
+}
+
+@-moz-keyframes love {
+  to {
+    -moz-transform: scale(1.2)
+  }
+}
+
+@keyframes love {
+  to {
+    transform: scale(1.2)
+  }
+}
+
+.credits li {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+  width: 140px;
+}
+
+.credits li a {
+  border: none;
+}
+
+.credits li span {
+  border-bottom: 1px dotted #7564DB;
+  line-height: 1.5em;
+}
+
+.credits li img {
+  border-radius: 4px;
+  float: left;
+  margin-right: 10px;
+  display: block;
 }
