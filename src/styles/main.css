@@ -1,3 +1,7 @@
+html, body, #layout, #main {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto Slab', serif;
 }
