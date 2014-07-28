@@ -26,7 +26,7 @@
         </p>
 
         <div class="header">
-          <h2>Before you start: getting the project</h2>
+          <h2 id="before-start">Before you start: getting the project</h2>
         </div>
 
         <p>
@@ -40,7 +40,7 @@
         </p>
 
         <div class="header">
-          <h2>Step 1: Creating an example file</h2>
+          <h2 id="step-1">Step 1: Creating an example file</h2>
         </div>
 
         <p>In this step, you'll create an example file under the <code>examples/</code> folder into where you unziped the project under your local drive. Go to this directory and create a file called <code>first_tracking.html</code> file in your favorite editor. The starting file looks like this:</p>
@@ -63,7 +63,7 @@
         {/literal}
 
         <div class="header">
-          <h2>Step 2: Choose what you want to play with</h2>
+          <h2 id="step-2">Step 2: Choose what you want to play with</h2>
         </div>
 
         <p>
@@ -159,7 +159,7 @@ trackerTask.run(); // Runs it again anytime
         <p>The previous example was an abstract overview about the tracker API available. Now let's dig into some practical usages of some of the available trackers.</p>
         <p class="content-subinfo"></p>
 
-        <h2 class="content-subhead">Color Tracker</h2>
+        <h2 id="color-tracker" class="content-subhead">Color Tracker</h2>
         <p>
           Colors are everywhere in every single object. Being able to handle colored objects to control your browser through the camera is very appealing. For that reason, tracking.js implemented a basic color tracking algorithm that resulted in a real-time frame rate through a simple and intuitive API.
           It offers several significant advantages over geometric cues such as computational simplicity, robustness under partial occlusion and illumination, rotation, scale and resolution changes.
@@ -218,7 +218,7 @@ trackerTask.run(); // Runs it again anytime
           <a class="pure-button pure-button-primary" href="./examples/color_hello_world.html">Live demo &gt;</a>
         </p>
 
-        <h2 class="content-subhead">Object Tracker</h2>
+        <h2 id="object-tracker" class="content-subhead">Object Tracker</h2>
         <p>
           Having a rapid object detection as part of the library resulted in interesting examples for web applications, such as detecting faces, mouths, eyes and any other training data that could be added to the library later.
         </p>
@@ -269,7 +269,7 @@ trackerTask.run(); // Runs it again anytime
           <a class="pure-button pure-button-primary" href="./examples/face_hello_world.html">Live demo &gt;</a>
         </p>
 
-        <h2 class="content-subhead">Custom Tracker</h2>
+        <h2 id="custom-tracker" class="content-subhead">Custom Tracker</h2>
         <p>
           It's easy to create your own tracker whenever you need one.
         </p>
@@ -356,7 +356,7 @@ tracking.inherits(MyTracker, tracking.Tracker);
         </p>
         <p class="content-subinfo"></p>
 
-        <h2 class="content-subhead">Feature Detection (Fast)</h2>
+        <h2 id="fast" class="content-subhead">Feature Detection (Fast)</h2>
         <p>
           Provides an implementation of <a href="http://en.wikipedia.org/wiki/Features_from_accelerated_segment_test" target="_blank">Features from Accelerated Segment Test</a> for features detection.
           In other words it finds corners on parts of the image. Fast is faster than many other well-known feature extraction methods.
@@ -375,7 +375,7 @@ tracking.inherits(MyTracker, tracking.Tracker);
           <a class="pure-button pure-button-primary" href="./examples/fast.html">Live demo &gt;</a>
         </p>
 
-        <h2 class="content-subhead">Feature Descriptor (Brief)</h2>
+        <h2 id="brief" class="content-subhead">Feature Descriptor (Brief)</h2>
         <p>
           Provides an implementation of <a href="http://cvlabwww.epfl.ch/~lepetit/papers/calonder_eccv10.pdf" target="_blank">Binary Robust Independent Elementary Features</a>. It uses binary strings as an efficient feature point descriptor. As a result, Brief is very fast both to build and to match, perfect for the web.
         </p>
@@ -402,7 +402,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button pure-button-primary" href="./examples/brief.html">Live demo &gt;</a>
         </p>
 
-        <h2 class="content-subhead">Convolution</h2>
+        <h2 id="convolution" class="content-subhead">Convolution</h2>
         <p>
           Convolution filters are very useful generic filters for image processing. The basic idea is that you take the weighed sum of a rectangle of pixels from the source image and use that as the output value. Convolution filters can be used for blurring, sharpening, embossing, edge detection and a whole bunch of other things.
         </p>
@@ -435,7 +435,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#horizontalConvolve" target="_blank">API docs</a>
         </p>
 
-        <h2 class="content-subhead">Gray Scale</h2>
+        <h2 id="gray-scale" class="content-subhead">Gray Scale</h2>
         <p>
           Converts a color from a colorspace based on an RGB color model to a grayscale representation of its luminance.
           The coefficients represent the measured intensity perception of typical trichromat humans, in particular, human vision is most sensitive to green and least sensitive to blue.
@@ -453,7 +453,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#grayscale" target="_blank">API docs</a>
         </p>
 
-        <h2 class="content-subhead">Image Blur</h2>
+        <h2 id="image-blur" class="content-subhead">Image Blur</h2>
         <p>
           A Gaussian blur (also known as Gaussian smoothing) is the result of blurring an image by a Gaussian function. It is a widely used effect in graphics software, typically to reduce image noise and reduce detail.
           Gaussian smoothing is also used as a pre-processing stage in computer vision algorithms in order to enhance image structures at different scales.
@@ -471,7 +471,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#blur" target="_blank">API docs</a>
         </p>
 
-        <h2 class="content-subhead">Integral Image</h2>
+        <h2 id="integral-image" class="content-subhead">Integral Image</h2>
         <p>
           A summed area table is a data structure and algorithm for quickly and efficiently generating the sum of values in a rectangular subset of a grid. In the image processing domain, it is also known as an integral image.
         </p>
@@ -490,7 +490,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#computeIntegralImage" target="_blank">API docs</a>
         </p>
 
-        <h2 class="content-subhead">Sobel</h2>
+        <h2 id="sobel" class="content-subhead">Sobel</h2>
         <p>
           Computes the vertical and horizontal gradients of the image and combines the computed images to find edges in the image.
           The way we implement the Sobel filter here is by first grayscaling the image, then taking the horizontal and vertical gradients and finally combining the gradient images to make up the final image.
@@ -508,7 +508,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button" href="http://trackingjs.com/api/tracking.Image.html#sobel" target="_blank">API docs</a>
         </p>
 
-        <h2 class="content-subhead">Viola Jones</h2>
+        <h2 id="viola-jones" class="content-subhead">Viola Jones</h2>
         <p>
           The <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola–Jones</a> object detection framework is the first object detection framework to provide competitive object detection rates in real-time.
           This techinique is used inside <code>tracking.ObjectTracker</code> implementation.
@@ -553,7 +553,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
 
         <p class="content-subinfo"></p>
 
-        <h2 class="content-subhead">Color Element</h2>
+        <h2 id="color-element" class="content-subhead">Color Element</h2>
 
         <p>
           As a first step of using tracking.js web components you need to learn how to extends a native DOM element with tracking functionality using the attribute <code class="html">is=""</code>. The tracking target is set through <code class="html">target=""</code> attribute and accepts different values depending on the tracker you are using, e.g. colors or objects.
@@ -572,7 +572,7 @@ var descriptors2 = tracking.Brief.getDescriptors(pixels, width, corners2);</code
           <a class="pure-button pure-button-primary" href="http://eduardolundgren.github.io/tracking-elements/examples/color.html">Live demo &gt;</a>
         </p>
 
-        <h2 class="content-subhead">Object Element</h2>
+        <h2 id="object-element" class="content-subhead">Object Element</h2>
 
         <p>
           Let's create an example that you can place an image with your friends faces and mark with a rectangle each of them. In this step, you'll create an example file under the <code>examples/</code> folder into where you unziped the project under your local drive. Go to this directory and create a file called <code>tracking_element.html</code> file in your favorite editor. The starting file looks like this:
