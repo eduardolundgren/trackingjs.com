@@ -3,6 +3,7 @@
 /**
  * @param content
  * @param baseDir
+ * @param? pageName
  */
 {template .page}
 <!doctype html>
@@ -15,7 +16,7 @@
   <meta name="description" content="A modern approach for Computer Vision on the web.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>tracking.js</title>
+  <title>tracking.js{if $pageName} | {$pageName}{/if}</title>
 
   <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,300,100|Ubuntu" rel="stylesheet" type="text/css">
 
