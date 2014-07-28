@@ -81,6 +81,39 @@
         {/call}
       </div>
     </div>
+
+    <footer class="credits">
+      <p>Made with <span class="love">♥</span> by these people and a bunch of awesome <a href="https://github.com/eduardolundgren/tracking.js/graphs/contributors">contributors</a>.</p>
+      {call .authors}
+        {param authors: [
+          [
+            'name': 'Eduardo Lundgren',
+            'image': 'https://2.gravatar.com/avatar/42327de520e674a6d1686845b30778d0?size=50',
+            'url': 'https://github.com/eduardolundgren'
+          ],
+          [
+            'name': 'Thiago Rocha',
+            'image': 'https://2.gravatar.com/avatar/09c627c62a26a770200819a41a71a3eb?size=50',
+            'url': 'https://github.com/thiago-rocha'
+          ],
+          [
+            'name': 'Zeno Rocha',
+            'image': 'https://2.gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93?size=50',
+            'url': 'https://github.com/zenorocha'
+          ],
+          [
+            'name': 'Pablo Carvalho',
+            'image': 'https://2.gravatar.com/avatar/ae10d2692a6adbf051c6d4255e222df8?size=50',
+            'url': 'https://github.com/pablocp'
+          ],
+          [
+            'name': 'Maira Bello',
+            'image': 'https://2.gravatar.com/avatar/97e0e62c9c02badba4c321f7613e6acf?size=50',
+            'url': 'mairatma'
+          ]
+        ] /}
+      {/call}
+    </footer>
   {/param}
 {/call}
 {/template}
@@ -101,4 +134,22 @@
       </figure>
     {/foreach}
   </div>
+{/template}
+
+/**
+ * @param authors
+ */
+{template .authors}
+  <ul>
+    {foreach $author in $authors}
+      <li>
+        <p>
+          <a href="{$author.url}">
+            <img src="{$author.image}" alt="{$author.name}">
+            <span>{$author.name}</span>
+          </a>
+        </p>
+      </li>
+    {/foreach}
+  </ul>
 {/template}
