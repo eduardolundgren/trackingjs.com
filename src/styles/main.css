@@ -39,7 +39,7 @@ pre {
 }
 
 .gh-btns {
-  width: 275px;
+  width: 285px;
   margin: 0 auto;
 }
 
@@ -54,7 +54,7 @@ pre {
 
 .code-install {
   text-align: center;
-  width: 245px;
+  width: 255px;
   margin: 50px auto 20px;
   display: block;
 }
@@ -77,7 +77,7 @@ a.pure-button-selected {
 
 .btn-download-icon {
   vertical-align: bottom;
-  padding-right: 15px;
+  padding-right: 30px;
 }
 
 .credits {
